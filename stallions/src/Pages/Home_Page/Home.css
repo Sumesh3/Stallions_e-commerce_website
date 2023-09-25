@@ -1,0 +1,200 @@
+@media (max-width: 768px) {
+    .home_main {
+        margin-top: 50px;
+    }
+
+    .summer {
+        font-size: 16px;
+        top: 3cm;
+        left: 1.5cm;
+    }
+
+    .summer2 {
+        font-size: 30px;
+        top: 4cm;
+        left: 2cm;
+    }
+
+    .summer3 {
+        font-size: 14px;
+        max-width: 300px;
+        top: 5.7cm;
+        left: 2cm;
+    }
+
+    .summer_button {
+        top: 8cm;
+        left: 2cm;
+    }
+
+    .home_img2 {
+        top: 30px;
+        left: 2cm;
+    }
+
+    .home_clothes,
+    .home_clothes2,
+    .home_clothes3 {
+        font-size: 20px;
+    }
+
+    .home_shope_now,
+    .home_shope_now2,
+    .home_shope_now3 {
+        top: 110px;
+        left: 50px;
+    }
+}
+
+
+
+
+body {
+    background-color: #c8c9b867;
+}
+
+.home_main {
+    margin-top: 75px;
+}
+
+.home_img {
+    position: relative;
+    width: 100%;
+}
+
+.summer {
+    position: absolute;
+    top: 5cm;
+    left: 3cm;
+    color: rgb(235, 6, 6);
+    font-weight: 500;
+    font-size: 19px;
+}
+
+.summer2 {
+    position: absolute;
+    top: 6cm;
+    left: 3.5cm;
+    font-weight: 700;
+    font-size: 40px;
+    max-width: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.summer3 {
+    max-width: 500px;
+    position: absolute;
+    top: 7.7cm;
+    left: 4cm;
+    /* font-weight: 400; */
+    font-size: 16px;
+    font-family: cursive;
+}
+
+.summer_button {
+    position: absolute;
+    top: 10.5cm;
+    left: 7.5cm;
+    background-color: black;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 30px;
+}
+
+.home_img2 {
+    position: relative;
+    top: 60px;
+    left: 19cm;
+}
+
+.home_clothes {
+    max-width: 260px;
+    position: absolute;
+    top: 23cm;
+    left: 14cm;
+    font-weight: 600;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.home_shope_now {
+    position: relative;
+    text-transform: uppercase;
+    top: 150px;
+    left: 100px;
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.home_shope_now:hover {
+    color: rgb(241, 47, 47);
+}
+
+.home_img3 {
+    position: relative;
+    top: -20px;
+    left: 100px;
+    max-width: 450px;
+}
+
+.home_clothes2 {
+    text-align: right;
+    max-width: 260px;
+    position: absolute;
+    top: 34cm;
+    left: 12cm;
+    font-weight: 600;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.home_shope_now2 {
+    position: relative;
+    text-transform: uppercase;
+    top: 3.2cm;
+    left: 140px;
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.home_shope_now2:hover {
+    color: rgb(241, 47, 47);
+}
+
+.home_img4 {
+    position: relative;
+    left: 21cm;
+    top: -5cm;
+    max-height: 600px;
+    max-width: 450px;
+}
+
+.home_clothes3 {
+    max-width: 180px;
+    position: relative;
+    top: -8.5cm;
+    left: 17.2cm;
+    font-weight: 600;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.home_shope_now3 {
+    position: relative;
+    text-transform: uppercase;
+    top: -8.5cm;
+    left: 17.5cm;
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.home_shope_now3:hover {
+    color: rgb(241, 47, 47);
+}

@@ -1,0 +1,16 @@
+.admin-user-nav {
+    position: relative;
+    top: -49px;
+    z-index: 1;
+}
+
+.admin-view-user {
+    position: relative;
+    top: 80px;
+}
+
+.table-admin {
+    background-color: rgba(250, 249, 249, 0.753);
+    border-color: rgb(31, 30, 30);
+    text-align: center;
+}

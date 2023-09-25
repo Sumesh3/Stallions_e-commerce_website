@@ -1,0 +1,183 @@
+@media (max-width: 768px) {
+    .add-admin {
+        top: -77px;
+    }
+
+    .prdmain {
+        top: 15px;
+    }
+
+    .cardss {
+        margin-bottom: 20px;
+    }
+
+    .category-grid {
+        grid-template-columns: 100%;
+    }
+
+    .gender-views {
+        margin-left: 0;
+    }
+}
+
+.add-admin {
+    position: relative;
+    top: -97px;
+    z-index: 1;
+}
+
+.prdmain {
+    position: relative;
+    top: 35px;
+}
+
+.cardss {
+    position: relative;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.cardh {
+    background-color: #171818;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.cardd {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+
+.shop__sidebar__colour label.c-1 {
+    background: #FF0000;
+}
+
+.shop__sidebar__colour label.c-2 {
+    background: #FFA500;
+}
+
+.shop__sidebar__colour label.c-3 {
+    background: #FFFF00;
+}
+
+.shop__sidebar__colour label.c-4 {
+    background: #00FF00;
+}
+
+.shop__sidebar__colour label.c-5 {
+    background: #0000FF;
+}
+
+.shop__sidebar__colour label.c-6 {
+    background: #4B0082;
+}
+
+.shop__sidebar__colour label.c-7 {
+    background: #EE82EE;
+}
+
+.shop__sidebar__colour label.c-8 {
+    background: #000000;
+}
+
+.shop__sidebar__colour label.c-9 {
+    background: #ffffff;
+}
+
+.shop__sidebar__colour label {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: relative;
+    left: -7px;
+    margin-right: 10px;
+    display: inline-block;
+    border: 1px solid #a3a2a2;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.shop__sidebar__colour label input {
+    position: relative;
+    left: 8px;
+    top: 2px;
+    visibility: hidden;
+}
+
+
+
+.shop__size {
+    display: inline-block;
+    position: relative;
+    left: -9px;
+    /* padding-top: 15px; */
+}
+
+.shop__size label {
+    color: #404040;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    border: 1px solid #cdcccc;
+    padding: 6px 25px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.shop__size label input {
+    position: absolute;
+    visibility: hidden;
+}
+
+.form-name {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.shop__sidebar__colour {
+    display: inline-block;
+}
+
+.gender-view {
+    margin-right: 30px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: 35% 35% 30%;
+}
+
+.gender-views {
+    margin-left: 24px;
+}

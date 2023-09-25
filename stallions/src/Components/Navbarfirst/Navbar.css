@@ -1,0 +1,45 @@
+@media (max-width: 768px) {
+    .header__top__left, .header__top__right {
+        text-align: center;
+    }
+    
+    .sign-in {
+        display: block;
+        margin: 0 auto; 
+        right: 0;
+    }
+}
+
+.header_n{
+    position: fixed;
+    background-color: black;
+    color: #fff;
+    width: 100%;
+    padding-top: 9px;
+    margin-top: 0px;
+    display: inline;
+    z-index: 1;
+}
+.head-text{
+    position: relative;
+    left: 1.5cm;
+    font-size: 1em;
+}
+.sign-in{
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    right: 4cm;
+    font-size: 15px;
+    cursor: pointer;
+    font-size: 0.9375em;
+}
+.sign-in:hover{
+    color: blueviolet;
+}
+.header__top__left{
+    text-align: left;
+}
+.header__top__right{
+    text-align: right;
+}

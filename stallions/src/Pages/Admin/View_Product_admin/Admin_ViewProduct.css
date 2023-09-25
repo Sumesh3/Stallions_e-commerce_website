@@ -1,0 +1,93 @@
+@media (max-width: 768px) {
+    .view-admin {
+        top: -29px;
+    }
+
+    .card-outer {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .ptitle-price {
+        font-size: 14px;
+    }
+}
+
+.view-admin {
+    position: relative;
+    top: -49px;
+    z-index: 1;
+}
+
+
+.card-outer {
+    /* justify-content: center; */
+    position: relative;
+    top: 70px;
+    width: 200px;
+    height: 350px;
+    border: 1px solid #c1c1c1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+    padding: 10px;
+    background-color: white;
+    display: inline-block;
+}
+
+.detelee {
+    background-color: transparent;
+    border: none;
+    /* margin-left: 50px; */
+    color: red;
+}
+
+.editt {
+    background-color: transparent;
+    border: none;
+    color: rgb(2, 164, 2);
+}
+
+.editt:hover {
+    color: rgb(1, 105, 1);
+}
+
+.detelee:hover {
+    color: rgb(196, 1, 1);
+}
+
+.buttons {
+    margin-top: 8px;
+}
+
+.ptitle-price {
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.ptitle-name {
+    text-transform: capitalize;
+}
+
+.viewadmin {
+    background-color: transparent;
+    border: none;
+    color: rgb(19, 19, 243);
+}
+
+.viewadmin:hover {
+    color: rgb(8, 8, 141);
+}
+.head-view-admin{
+    background-color: rgb(56, 72, 69);
+    position: relative;
+    top: 50px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

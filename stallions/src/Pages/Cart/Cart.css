@@ -1,0 +1,126 @@
+.cart-nav{
+    position: relative;
+    top: -65px;
+    z-index: 1;
+}
+
+.cart-body{
+    position: relative;
+    top: 50px;
+}
+
+.container-h1 {
+    font-family: 'Times New Roman', Times, serif;
+    top: 50px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+}
+
+.cart-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    
+}
+
+.cart-item {
+    display: inline-flex;
+    margin-bottom: 20px;
+    margin-right: 20%;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.301);
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.cart-pname{
+    font-weight: 600;
+    font-size: 21px;
+    font-family: sans-serif;
+}
+
+.price {
+    color: #4f4f4f;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.quantity-container {
+    display: flex;
+    align-items: center;
+}
+
+.quantity {
+    width: 40px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 10px;
+    padding: 5px;
+    outline: none;
+    color: green;
+}
+
+.remove-button {
+    background-color: transparent;
+    color: #0b0a0a;
+    border:  1px solid #cdcccc;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+    color: #dc4130;
+}
+
+.total-price {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.checkout-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #0250a3;
+    color: #fff;
+}
+
+.continue-shopping {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: green;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.continue-shopping:hover {
+    color:  rgb(2, 179, 2);
+}

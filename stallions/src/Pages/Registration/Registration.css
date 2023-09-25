@@ -1,0 +1,138 @@
+@media (max-width: 768px) {
+    .registration-container {
+        width: 80%;
+        margin: 50px auto;
+        padding: 30px;
+    }
+
+    .registration-head {
+        font-size: 20px;
+    }
+
+    .registration-name {
+        font-size: 14px;
+    }
+
+    .registration-text {
+        margin-bottom: 12px;
+    }
+
+    .registration-continue {
+        width: 100%;
+    }
+
+    .registration-sign {
+        margin-top: 20px;
+    }
+
+    .registration-ang {
+        font-size: 14px;
+        margin-left: 0;
+    }
+
+    .reg_span {
+        font-size: 10px;
+    }
+}
+
+.register_navfix {
+    position: relative;
+    top: -150px;
+}
+
+.registration-container {
+    position: relative;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    width: 560px;
+    margin: 100px auto;
+    /* border: 1px solid #323131; */
+    padding: 40px 50px;
+    box-shadow: 0px 0px 22px 0px #df2e2e89;
+
+}
+
+.registration-head {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.registration-name {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: cursive;
+}
+
+.registration-text {
+    background-color: transparent;
+    margin-bottom: 16px;
+    width: 100%;
+    border: 1.33px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    box-sizing: border-box;
+    padding: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.registration-text:focus {
+    background-color: transparent;
+    outline: 0;
+    border: 1.33px solid rgba(44, 189, 12, 0.966);
+    border-radius: 5px;
+}
+
+.registration-continue {
+    background-color: #ffe923;
+    padding: 6px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.registration-continue:hover {
+    background-color: #d8c513;
+    cursor: pointer;
+}
+
+.registration-sign {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 25px;
+}
+
+.registration-ang {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 17px;
+    margin-left: 10px;
+    color: rgb(64, 64, 220);
+    cursor: pointer;
+}
+
+.registration-ang:hover {
+    color: rgb(2, 2, 174);
+    cursor: pointer;
+}
+
+.reg_span {
+    display: flex;
+    margin-top: -16px;
+    font-size: 12px;
+    position: relative;
+    left: 10px;
+    color: red;
+}
+
+.registration-box {
+    height: 75px;
+}

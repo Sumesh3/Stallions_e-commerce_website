@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Registartion, Login, Product, Cart
+from .models import Registartion, Login, Product, Cart, Review
 
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
@@ -26,3 +26,11 @@ class CartSerializer(serializers.ModelSerializer):
         fields = '__all__'
     def create(serlf,validated_data):
         return Cart.objects.create(**validated_data)
+    
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = '__all__'
+    def create(serlf,validated_data):
+        return Cart.objects.create(**validated_data)
+    

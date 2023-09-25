@@ -6,8 +6,8 @@ from django.db.models import Q
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.generics import GenericAPIView
-from .models import Registartion, Login, Product, Cart
-from .serializers import RegisterSerializer, LoginSerializer, ProductSerializer, CartSerializer
+from .models import Registartion, Login, Product, Cart, Review
+from .serializers import RegisterSerializer, LoginSerializer, ProductSerializer, CartSerializer, ReviewSerializer
 
 
 class registration_api(GenericAPIView):
@@ -176,6 +176,22 @@ class search_product_api(GenericAPIView):
         return Response({'data': queryset, 'message': 'Successfully fetched', 'success': True}, status=status.HTTP_200_OK)
     
 
+class add_review_api(GenericAPIView):
+    serializer_class = ReviewSerializer
+
+    def post(self, request):
+        reference = request.data.get('reference')
+        description = request.data.get('description')
+        time_raised = request.data.get('time_raised')
+
+        serializer = self.serializer_class(
+            data={'reference': reference, 'description': description, 'time_raised': time_raised})
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'data': serializer.data, 'message': 'Successfully add review', 'success': 1}, status=status.HTTP_200_OK)
+        return Response({'data': serializer.errors, 'message': 'failed', 'success': 0}, status=status.HTTP_400_BAD_REQUEST)
+
+ 
 
 class add_cart_api(GenericAPIView):
     serializer_class = CartSerializer
@@ -192,3 +208,12 @@ class add_cart_api(GenericAPIView):
             serializer.save()
             return Response({'data': serializer.data, 'message': 'Added to cart', 'success': 1}, status=status.HTTP_200_OK)
         return Response({'data': serializer.errors, 'message': 'failed to add product to cart', 'success': 0}, status=status.HTTP_400_BAD_REQUEST)
+    
+
+class view_cart_api(GenericAPIView):
+    def get(self, request, id):
+        queryset = Cart.objects.get(pk=id)
+        serializer = CartSerializer(queryset)
+        return Response(serializer.data)
+    
+   

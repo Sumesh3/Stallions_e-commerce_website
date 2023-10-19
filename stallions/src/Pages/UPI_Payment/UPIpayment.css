@@ -1,0 +1,70 @@
+.upi-nav {
+    position: relative;
+    top: -50px;
+
+}
+
+.upi-main {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-upi {
+    margin-top: 140px;
+    width: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+}
+
+.upi-head {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.upi_text {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.upi_submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.upi_submit:hover {
+    background-color: #45a049;
+}
+
+.upi_label {
+    text-align: left;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.verify_button {
+    border: none;
+    background-color: #a6a5a5;
+    color: #fff;
+    padding: 6px 30px;
+    border-radius: 5px;
+}

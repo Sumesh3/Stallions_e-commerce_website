@@ -1,5 +1,9 @@
-@media (max-width: 768px) {
-  
+@media only screen and (max-width: 768px) {
+
+  /* For mobile phones: */
+  .header_li {
+    display: none;
+  }
 }
 
 .header_img,
@@ -58,8 +62,19 @@
   color: rgb(248, 12, 12);
 }
 
+.search {
+ position: relative;
+ top: -18px;
+ left: -25px;
+}
+
 .search:hover {
   color: rgb(75, 75, 245);
+}
+
+.cart{
+  position: relative;
+  top: -3px;
 }
 
 .cart:hover {
@@ -125,6 +140,7 @@
 
 .ul_sec {
   position: relative;
-  left: 8cm;
+  display: inline-flex;
+  left: 120px;
   top: -2px;
 }

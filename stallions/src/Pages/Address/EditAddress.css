@@ -1,0 +1,95 @@
+.edit_card-add-form {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.edit_card-headers {
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.edit_form-groups {
+    display: inline-block;
+    margin-left: 25px;
+    margin-right: 0px;
+    justify-content: center;
+}
+
+.edit_form-group {
+    margin-right: 35px;
+    margin-left: 25px;
+    justify-content: center;
+}
+
+.edit_form_alt {
+    margin-top: 5px;
+}
+
+.edit_address_input_form:focus {
+    background-color: transparent;
+    outline: 0;
+    border: 1.33px solid rgba(44, 189, 12, 0.966);
+    border-radius: 5px;
+    margin-left: 2px;
+    transition: all 0.5s ease-in;
+}
+
+.edit_address_input_form {
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    width: 100%;
+    background-color: transparent;
+    border: 1.33px solid rgb(172, 172, 172);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    box-sizing: border-box;
+    padding: 6px;
+}
+
+.edit_container {
+    position: relative;
+    margin-top: 40px;
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(132, 132, 133, 0.5);
+    transition: all .4s;
+}
+
+.close_button_add {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    font-size: 17px;
+}
+
+.edit_form-groups label,
+.edit_form-group label {
+    font-weight: 500;
+    margin-bottom: 3px;
+    margin-left: 5px;
+}
+
+.edit_add_btn{
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    cursor: pointer;
+}

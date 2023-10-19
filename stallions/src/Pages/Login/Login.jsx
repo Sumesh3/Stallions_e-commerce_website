@@ -34,10 +34,6 @@ export default function Login() {
         return error
     }
 
-    // const [dataStore, setDataStore] = useState({
-
-    // })
-
 
 
     const continew = (event) => {
@@ -97,7 +93,7 @@ export default function Login() {
                     <div className='login-name'>Password</div>
                     <input className='login-text' type="password" name='password' onChange={loginData} />
                     <div>
-                        <a className='login-forgot' href="#">Forgot Password ?</a>
+                        <a className='login-forgot' href="/forgotpassword">Forgot Password ?</a>
                     </div>
                     <center>
                         <button className='login-continue' onClick={continew}>Continue</button>

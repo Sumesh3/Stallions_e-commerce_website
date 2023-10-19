@@ -8,9 +8,11 @@ import SwapHoriz from '@mui/icons-material/SwapHoriz';
 import Store from '@mui/icons-material/Store';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useNavigate } from 'react-router-dom';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AddIcon from '@mui/icons-material/Add';
 import PreviewIcon from '@mui/icons-material/Preview';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Search_list from '../Navbarf2/Search_list';
 
 export default function NavMenu() {
     let user = localStorage.getItem("email")
@@ -29,11 +31,10 @@ export default function NavMenu() {
                 <div className='col-lg-12 col-md-12  menu_dropdown dropdown'>
                     <button className='menu_dropbtn dropbtn'><MenuIcon /></button>
                     <div className='menu_dropdown-content dropdown-content'>
-                        <a href="/#"><AccountCircleIcon />   Profile</a>
-                        <a href="/shop"><Store />   Shope</a>
-                        <a href="/#"><SwapHoriz />   Return & Exchange</a>
-                        <a href="/#"><FavoriteIcon></FavoriteIcon>   Wishlist</a>
-                        <a href="/#"><SearchIcon />   Search</a>
+                        <a href="/shop"><Store />   Shop</a>
+                        <a href="/wishlist"><FavoriteIcon></FavoriteIcon>   Wishlist</a>
+                        <a href="/cart"><ShoppingCartIcon />  Cart</a>
+                        <a href="/changepassword"><ManageAccountsIcon />   Change Password</a>
                         {user ? <a onClick={clears}> <LogoutIcon />  LOG OUT</a> : <a href="/registration"><Person />     Register</a>}
                     </div>
                 </div>
@@ -41,26 +42,21 @@ export default function NavMenu() {
                     <div className='col-lg-12 col-md-12  menu_dropdown dropdown'>
                         <button className='menu_dropbtn dropbtn'><MenuIcon /></button>
                         <div className='menu_dropdown-content dropdown-content'>
-                            <a href="/#"><AccountCircleIcon />   Profile</a>
                             <a href="/addproduct"><AddIcon />   Add Product</a>
                             <a href="/adminviewproduct"><PreviewIcon />   View Product</a>
-                            <a href="/#"><SearchIcon />   Search</a>
+                            <a href="/changepassword"><ManageAccountsIcon />   Change Password</a>
                             {user ? <a onClick={clears}> <LogoutIcon />  LOG OUT</a> : <a href="/registration"><Person />     Register</a>}
                         </div>
                     </div>
                     :
                     <div className='col-lg-12 col-md-12  menu_dropdown dropdown'>
-                    <button className='menu_dropbtn dropbtn'><MenuIcon /></button>
-                    <div className='menu_dropdown-content dropdown-content'>
-                        <a href="/#"><AccountCircleIcon />   Profile</a>
-                        <a href="/shop"><Store />   Shope</a>
-                        <a href="/#"><SwapHoriz />   Return & Exchange</a>
-                        <a href="/#"><FavoriteIcon></FavoriteIcon>   Wishlist</a>
-                        <a href="/#"><SearchIcon />   Search</a>
-                        {user ? <a onClick={clears}> <LogoutIcon />  LOG OUT</a> : <a href="/registration"><Person />     Register</a>}
+                        <button className='menu_dropbtn dropbtn'><MenuIcon /></button>
+                        <div className='menu_dropdown-content dropdown-content'>
+                            <a href="/shop"><Store />   Shop</a>
+                            {user ? <a onClick={clears}> <LogoutIcon />  LOG OUT</a> : <a href="/registration"><Person />     Register</a>}
+                        </div>
                     </div>
-                </div>
-    }
+            }
         </>
     )
 }

@@ -1,0 +1,63 @@
+.addre-nav {
+    position: relative;
+    top: -50px;
+}
+
+.card-add-form {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.address_card-headers {
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.address_form-groups {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+    margin-right: 0px;
+    justify-content: center;
+}
+
+.address_form-group {
+    margin-right: 35px;
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.form_alt {
+    margin-top: 20px;
+}
+
+.address_input_form:focus {
+    background-color: transparent;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    box-sizing: border-box;
+    padding: 6px;
+    text-transform: capitalize;
+}
+
+.address_input_form {
+    background-color: transparent;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    text-transform: capitalize;
+}
+
+.address_form-groups label,
+.address_form-group label {
+    font-weight: 500;
+    margin-bottom: 3px;
+    margin-left: 5px;
+}

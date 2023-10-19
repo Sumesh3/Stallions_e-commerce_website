@@ -14,14 +14,13 @@
 }
 
 .view-admin {
-    position: relative;
+    position: absolute;
     top: -49px;
     z-index: 1;
 }
 
 
 .card-outer {
-    /* justify-content: center; */
     position: relative;
     top: 70px;
     width: 200px;
@@ -29,10 +28,12 @@
     border: 1px solid #c1c1c1;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 5px;
     padding: 10px;
     background-color: white;
     display: inline-block;
+    margin-top: -13px;
+    margin-bottom: 23px;
+    margin-left: 9px;
 }
 
 .detelee {
@@ -79,15 +80,34 @@
 .viewadmin:hover {
     color: rgb(8, 8, 141);
 }
-.head-view-admin{
-    background-color: rgb(56, 72, 69);
+
+.nice_scrolls {
     position: relative;
-    top: 50px;
+    top: 60px;
+}
+
+.nice_scrolls li {
+    cursor: pointer;
+}
+
+.head-view-admi {
+    text-decoration: none;
     width: 100%;
-    padding: 10px;
+    padding: 3px;
     text-align: center;
-    color: #fff;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    color: rgb(168, 19, 89);
+}
+
+.filter_admin_no{
+    position: relative;
+    top: 120px;
+    text-align: center;
+}
+
+.demmy_1{
+    margin-bottom: 70px;
 }

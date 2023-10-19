@@ -1,0 +1,15 @@
+.search_item {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    padding: 5px;
+    margin-bottom: 2px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.search_details {
+    position: absolute;
+    top: 0px;
+    left: 50px;
+}

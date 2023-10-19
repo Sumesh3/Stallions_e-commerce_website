@@ -1,0 +1,177 @@
+.payment-nav{
+position: relative;
+top: -50px;
+}
+
+.bill_body {
+    position: relative;
+    top: 65px;
+    box-sizing: inherit;
+    display: grid;
+    line-height: 1.5;
+    margin: 0;
+    min-block-size: 100vh;
+    padding: 5vmin;
+    place-items: center;
+    
+}
+
+.iphone {
+    background-color: #fbf6f7;
+    background-image: linear-gradient(to bottom, #fbf6f7, #fff);
+    border-radius: 2em;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
+    inline-size: 375px;
+    overflow: auto;
+    padding: 2em;
+}
+
+.pay_address {
+    font-style: normal;
+    text-transform: capitalize;
+}
+
+.button {
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+}
+
+.pyment_method {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.checkout_h1{
+    line-height: 1.2;
+    margin-block: 0 1.5em;
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.checkout_h2{
+    line-height: 1.2;
+    margin-block: 0 0.5em;
+    font-size: 1.1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.pyment_method_sub{
+    font-weight: 600;
+    margin-block-end: 0.5em;
+    padding: 0;
+}
+
+.pay_type_input{
+    border: 0;
+    color: inherit;
+    font: inherit;
+    accent-color: #c0236c;
+}
+
+.table_bill{
+    border-collapse: collapse;
+    inline-size: 100%;
+}
+
+.tbody_bill{
+    color: #b4b4b4;
+}
+
+.td_bill{
+    padding-block: 0.125em;
+}
+
+.tfoot_bill{
+    border-top: 1px solid #b4b4b4;
+    font-weight: 600;
+}
+
+.button_bill{
+    align-items: center;
+    background-color: #fc8080;
+    border-radius: 999em;
+    color: #fff;
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
+    padding-block: 0.75em;
+    padding-inline: 1em;
+    transition: 0.3s;
+    inline-size: 100%;
+}
+
+.button_bill:focus,
+.button_bill:hover {
+    background-color: #e96363;
+    inline-size: 100%;
+}
+
+.card-address {
+    border-radius: 1em;
+    background-color: #80b0fc;
+    color: #fff;
+    padding-left: 30px;
+    padding-top: 15px;
+}
+
+.form_check {
+    display: grid;
+    gap: 2em;
+}
+
+.form__radios {
+    display: grid;
+    gap: 1em;
+}
+
+.form__radio {
+    align-items: center;
+    background-color: #fefdfe;
+    border-radius: 1em;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
+    display: flex;
+    padding: 1em;
+}
+
+.form__radio label {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    gap: 1em;
+}
+
+.checkout {
+    display: flex;
+    justify-content: center;
+    padding-block: 0.5em;
+    padding-inline: 1em;
+}
+
+.icon {
+    block-size: 1em;
+    display: inline-block;
+    fill: currentColor;
+    inline-size: 1em;
+    vertical-align: middle;
+}
+
+.icons {
+    display: inline-block;
+    fill: currentColor;
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+}
+
+.address_edit_pay{
+    color: black;
+    position: absolute;
+    left: 275px;
+    top: 6px;
+    background-color: transparent;
+    border: none;
+}

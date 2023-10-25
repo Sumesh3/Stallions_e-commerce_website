@@ -13,8 +13,7 @@ from .qr import Generateqr
 x = 0
 data = ""
 z = ""
-
-
+    
 class registration_api(GenericAPIView):
     serializer_class = RegisterSerializer
     serializer_class_login = LoginSerializer

@@ -27,6 +27,7 @@ import EditAddress from './Pages/Address/EditAddress';
 import Search_list from './Components/Navbarf2/Search_list';
 import Single_view from './Pages/Single_Product/Single_view';
 import Edit_Product from './Pages/Admin/View_Product_admin/Edit_Product';
+import Footer from './Pages/Footer/Footer';
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
             <Route path='/search_list' element={<Search_list />} />
             <Route path='/single_view/:id' element={<Single_view />} />
             <Route path='/edit_product/:id' element={<Edit_Product/>} />
+            <Route path='/footer' element={<Footer/>} />
           </Routes>
         </BrowserRouter>
       </>

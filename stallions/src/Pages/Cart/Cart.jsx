@@ -5,6 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Footer from '../Footer/Footer';
 
 export default function Cart() {
 
@@ -102,10 +103,7 @@ export default function Cart() {
                     </div>
                 </div>
             </div>
-
-
-
-
+            <Footer></Footer>
         </>
     )
 }

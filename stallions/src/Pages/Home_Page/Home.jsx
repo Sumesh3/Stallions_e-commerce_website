@@ -35,6 +35,11 @@ export default function Home() {
         <div className='home_clothes3'>New Arrival T-Shirt</div>
         <a href="/shop" className='home_shope_now3'>Shop Now</a>
       </div>
+      <div>
+        <img className='home_img5' src="Assets\Images\image_zoom.jpeg" alt="" />
+        <div className='home_clothes4'>New Model Churidar</div>
+        <a href="/shop" className='home_shope_now4'>Shop Now</a>
+      </div>
     </>
   )
 }

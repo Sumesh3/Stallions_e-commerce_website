@@ -3,6 +3,7 @@ import './Registration.css'
 import axios from 'axios'
 import Navbarf2 from '../../Components/Navbarf2/Navbarf2'
 import { ToastContainer, toast } from 'react-toastify'
+import Footer from '../Footer/Footer'
 
 export default function Registration() {
 
@@ -133,6 +134,7 @@ export default function Registration() {
                     </form>
                 </div>
             </div>
+            <Footer></Footer>
         </>
     )
 }

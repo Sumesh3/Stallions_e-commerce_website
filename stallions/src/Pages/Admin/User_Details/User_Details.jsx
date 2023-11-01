@@ -26,12 +26,6 @@ export default function User_Details() {
         getFilterUser(data)
     }, [userDetails])
 
-
-
-
-
-
-
     const deletee = (deleteid) => {
 
         axios.delete(`http://127.0.0.1:8000/api/delete_user_api/${deleteid}`).then((response) => {

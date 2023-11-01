@@ -10,6 +10,7 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProduct, filterProduct } from '../Redux/Slice/ProductViewSlice';
 import { Link } from 'react-router-dom';
+import Footer from '../Footer/Footer';
 
 export default function Shop() {
 
@@ -368,6 +369,7 @@ export default function Shop() {
                     </div>
                 </div>
             </section>
+            <Footer></Footer>
         </>
     )
 }

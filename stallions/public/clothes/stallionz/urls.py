@@ -35,8 +35,6 @@ urlpatterns = [
     path("update_address_api/<int:id>", views.update_address_api.as_view(), name="update_address_api"),
     path("delete_user_api/<int:id>", views.delete_user_api.as_view(), name="delete_user_api"),
 
-    path("card_payment_api", views.card_payment_api.as_view(), name="card_payment_api"),
-
     path("OTP_Verification_API", views.OTP_Verification_API.as_view(), name="OTP_Verification_API"),
     path("OTP_Checking_API", views.OTP_Checking_API.as_view(), name="OTP_Checking_API"),
     path("Update_Password_API", views.Update_Password_API.as_view(), name="Update_Password_API"),
@@ -47,4 +45,7 @@ urlpatterns = [
     path("generate_order_number/<int:id>", views.generate_order_number.as_view(), name="generate_order_number"),
     path("update_single_product_api/<int:id>", views.update_single_product_api.as_view(), name="update_single_product_api"),
 
+    path("place_order_api", views.place_order_api.as_view(), name="place_order_api"),
+
+    path("card_payment_api", views.card_payment_api.as_view(), name="card_payment_api"),
 ]

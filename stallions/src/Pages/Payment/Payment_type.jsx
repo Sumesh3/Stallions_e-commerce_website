@@ -102,15 +102,17 @@ export default function Payment_type() {
             const data = {
                 userid: localStorage.getItem('login_id'),
                 grandtotal: sessionStorage.getItem('amount'),
-                pyment_status: 1,
-                name: sessionStorage.getItem('holdername')
+                pyment_status: 0,
+                name: sessionStorage.getItem('holdername'),
+                pyment_type: 'Cash on delivery'
             }
             console.log(data);
 
             axios.post('http://127.0.0.1:8000/api/final_pyment_api', data).then((response) => {
-                console.log(response.data.data);
+                console.log(response.data.data.id);
                 navigate(`/paymentsuccessful/${response.data.data.id}`)
-            }).catch((error) => {
+            })
+            .catch((error) => {
                 console.log(error);
             }) 
         }

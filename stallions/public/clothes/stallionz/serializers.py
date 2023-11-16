@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Registartion, Login, Product, Cart, Review, Wishlist, Address, Cardpayment, Final_pyment
+from .models import Registartion, Login, Product, Cart, Review, Wishlist, Address, Cardpayment, Final_pyment, place_order
 
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -78,3 +78,12 @@ class Final_pyment_Serializer(serializers.ModelSerializer):
 
     def create(serlf, validated_data):
         return Final_pyment.objects.create(**validated_data)
+
+
+class place_order_Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = place_order
+        fields = '__all__'
+
+    def create(serlf, validated_data):
+        return place_order.objects.create(**validated_data)

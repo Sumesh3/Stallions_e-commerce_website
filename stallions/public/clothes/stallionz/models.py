@@ -100,6 +100,40 @@ class Address(models.Model):
         return self.name
 
 
+class place_order(models.Model):
+    user = models.CharField(max_length=20)
+    productname = models.CharField(max_length=500)
+    productid = models.CharField(max_length=30)
+    quantity = models.CharField(max_length=30)
+    color = models.CharField(max_length=500)
+    size = models.CharField(max_length=500)
+    image = models.CharField(max_length=500)
+    category = models.CharField(max_length=500)
+    gender = models.CharField(max_length=500)
+    grandtotal = models.CharField(max_length=500)
+    # pyment_status = models.CharField(max_length=500)
+    order_status = models.CharField(max_length=500)
+
+
+class Final_pyment(models.Model):
+    userid = models.CharField(max_length=20)
+    name = models.CharField(max_length=20)
+    pyment_status = models.CharField(max_length=20)
+    grandtotal = models.CharField(max_length=20)
+    productname = models.CharField(max_length=200)
+    productid = models.CharField(max_length=200)
+    quantity = models.CharField(max_length=200)
+    color = models.CharField(max_length=200)
+    size = models.CharField(max_length=200)
+    image = models.CharField(max_length=200)
+    category = models.CharField(max_length=200)
+    gender = models.CharField(max_length=200)
+    pyment_type = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+
 class Cardpayment(models.Model):
     userid = models.ForeignKey(Login, on_delete=models.CASCADE)
     cardnumber = models.CharField(max_length=30)
@@ -111,12 +145,3 @@ class Cardpayment(models.Model):
 
     def __str__(self):
         return self.cardholder
-
-class Final_pyment(models.Model):
-    userid = models.CharField(max_length=20)
-    name = models.CharField(max_length=20)
-    pyment_status = models.CharField(max_length=20)
-    grandtotal = models.CharField(max_length=20)
-
-    def __str__(self):
-        return self.userid

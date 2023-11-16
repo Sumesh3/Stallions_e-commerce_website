@@ -4,7 +4,7 @@ import Navbarf2 from '../../Components/Navbarf2/Navbarf2'
 import DeleteIcon from '@mui/icons-material/Delete';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 
 export default function Cart() {
@@ -23,7 +23,7 @@ export default function Cart() {
 
 
     const [editCart, seteditCart] = useState({})
-    const [total, settotal] = useState(0)
+
 
     const fetchValue = (event) => {
         const name = event.target.name
@@ -48,6 +48,8 @@ export default function Cart() {
         })
     }
 
+    const [total, settotal] = useState(0)
+
     useEffect(() => {
 
         let subtotal = 0
@@ -59,6 +61,25 @@ export default function Cart() {
 
     }, [viewCart])
 
+    const gtotal = total + (total * .09)
+
+    console.log(gtotal);
+
+    const navigate = useNavigate()
+
+    const submit = () => {
+        const data = {
+            grandtotal: gtotal,
+            user: id
+        }
+        axios.post('http://127.0.0.1:8000/api/place_order_api', data).then((response) => {
+            console.log(response.data);
+            navigate('/address')
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
     return (
         <>
             <div className='cart-nav'>
@@ -67,42 +88,55 @@ export default function Cart() {
             <div className='cart-body'>
                 <h1 className='text-center mb-4 container-h1 mt-3'>Your Shopping Cart</h1>
             </div><br />
-            <div className="cart-container mt-4 mb-5">
-                {
-                    viewCart.map((data, key) => (
-                        <>
-                            <div className="cart-item">
-                                <img src={`/clothes/media/${data.image}`} alt="" />
-                                <div className="item-details">
-                                    <h2 className='cart-pname'>{data.productname}</h2>
-                                    <p className="price"><CurrencyRupeeIcon fontSize='10px' />{data.total_price}</p>
-                                    <div className="quantity-container">
-                                        <form action="" onSubmit={() => { cartDetails(data.id) }}>
-                                            <input type="number" Value={data.quantity} min={1} className="quantity" name='quantity' onChange={fetchValue} onClick={() => { cartDetails(data.id) }}></input>
-                                        </form>
+            {
+                viewCart.length > 0 ?
+                    <div className="cart-container mt-4 mb-5">
+                        {
+                            viewCart.map((data, key) => (
+                                data.cart_status == 0 || 1 ?
+                                    <>
+                                        <div className="cart-item">
+                                            <img src={`/clothes/media/${data.image}`} alt="" />
+                                            <div className="item-details">
+                                                <h2 className='cart-pname'>{data.productname}</h2>
+                                                <p className="price"><CurrencyRupeeIcon fontSize='10px' />{data.total_price}</p>
+                                                <div className="quantity-container">
+                                                    <form action="" onSubmit={() => { cartDetails(data.id) }}>
+                                                        <input type="number" Value={data.quantity} min={1} className="quantity" name='quantity' onChange={fetchValue} onClick={() => { cartDetails(data.id) }}></input>
+                                                    </form>
+                                                    <button className="remove-button" onClick={() => { deletee(data.id) }}><DeleteIcon /> Remove</button>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                        <button className="remove-button" onClick={() => { deletee(data.id) }}><DeleteIcon /> Remove</button>
-                                    </div>
-                                </div>
+                                    </>
+                                    :
+                                    ''
+                            ))
+
+                        }
+
+
+                        <div className="row mt-4">
+                            <div className="col-md-6 offset-md-7">
+                                <h4 className='font-weight-bold'>Order Summary</h4>
+                                <p>Subtotal :<CurrencyRupeeIcon fontSize='10px' />{total}</p>
+                                <p>Tax :<CurrencyRupeeIcon fontSize='10px' />{total * .09}</p>
+                                <p className="total-price">Total :<CurrencyRupeeIcon fontSize='10px' />{total + (total * .09)}</p>
+                              
+                                <button onClick={submit} className="btn checkout-btn btn-block">Proceed to Checkout</button>
+                             
+                                <a href="/shop" class="continue-shopping">Continue Shopping</a>
                             </div>
+                        </div>
 
-                        </>
-                    ))
-                }
-
-                <div className="row mt-4">
-                    <div className="col-md-6 offset-md-7">
-                        <h4 className='font-weight-bold'>Order Summary</h4>
-                        <p>Subtotal :<CurrencyRupeeIcon fontSize='10px' />{total}</p>
-                        <p>Tax :<CurrencyRupeeIcon fontSize='10px' />{total*.09}</p>
-                        <p className="total-price">Total :<CurrencyRupeeIcon fontSize='10px' />{total+(total*.09)}</p>
-                        <Link to={'/address'}>
-                        <button className="btn checkout-btn btn-block">Proceed to Checkout</button>
-                        </Link>
-                        <a href="/shop" class="continue-shopping">Continue Shopping</a>
                     </div>
-                </div>
-            </div>
+                    :
+                    <center>
+                        <div className="cart-container mt-4 mb-5">NO PRODUCT IN YOUR CART</div>
+                    </center>
+            }
+
             <Footer></Footer>
         </>
     )

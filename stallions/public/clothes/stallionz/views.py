@@ -6,14 +6,15 @@ from django.db.models import Q
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.generics import GenericAPIView
-from .models import Registartion, Login, Product, Cart, Review, Wishlist, Address, Cardpayment, Final_pyment
-from .serializers import RegisterSerializer, LoginSerializer, ProductSerializer, CartSerializer, ReviewSerializer, WishlistSerializer, AddressSerializer, CardpaymentSerializer, Final_pyment_Serializer
+from .models import Registartion, Login, Product, Cart, Review, Wishlist, Address, Cardpayment, Final_pyment, place_order
+from .serializers import RegisterSerializer, LoginSerializer, ProductSerializer, CartSerializer, ReviewSerializer, WishlistSerializer, AddressSerializer, CardpaymentSerializer, Final_pyment_Serializer, place_order_Serializer
 from .PythonMail import sendmail
 from .qr import Generateqr
 x = 0
 data = ""
 z = ""
-    
+
+
 class registration_api(GenericAPIView):
     serializer_class = RegisterSerializer
     serializer_class_login = LoginSerializer
@@ -152,7 +153,8 @@ class single_product_APTView(GenericAPIView):
         queryset = Product.objects.get(pk=id)
         serializer = ProductSerializer(queryset)
         return Response(serializer.data)
-    
+
+
 class update_single_product_api(GenericAPIView):
     Serializer_class = ProductSerializer
 
@@ -165,8 +167,6 @@ class update_single_product_api(GenericAPIView):
         if serializer.is_valid():
             serializer.save()
             return Response({'data': serializer.data, 'message': 'updated successfully', 'success': 1}, status=status.HTTP_200_OK)
-
-
 
 
 class delete_product_api(GenericAPIView):
@@ -182,7 +182,7 @@ class search_product_api(GenericAPIView):
     def post(self, request):
         query = request.data.get('query')
         print(query)
-        if (query!=""):
+        if (query != ""):
             queryset = Product.objects.filter(
                 Q(productname__icontains=query) | Q(category__icontains=query)
             ).values()
@@ -204,7 +204,6 @@ class search_product_api(GenericAPIView):
         else:
             return Response({'message': 'no result found', 'success': True}, status=status.HTTP_200_OK)
 
-            
 
 # REVIEW SECTION
 
@@ -325,7 +324,7 @@ class view_cart_api(GenericAPIView):
             serializer = CartSerializer(cart_pro, many=True)
             return Response({'data': serializer.data, 'message': 'data get', 'success': True}, status=status.HTTP_200_OK)
         else:
-            return Response({'data': 'No data available'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'message': 'No data available'}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class delete_cart_product_api(GenericAPIView):
@@ -371,7 +370,6 @@ class add_wishlist_api(GenericAPIView):
         wlishlist = Wishlist.objects.filter(productid=productid, userid=userid)
         if wlishlist.exists():
             return Response({'message': 'Item is already in wlishlist', 'success': False}, status=status.HTTP_400_BAD_REQUEST)
-
         else:
             product_data = Product.objects.filter(id=productid).values()
             print(product_data)
@@ -399,7 +397,7 @@ class view_wishlist_api(GenericAPIView):
             serializer = WishlistSerializer(wishlist_pro, many=True)
             return Response({'data': serializer.data, 'message': 'data get', 'success': True}, status=status.HTTP_200_OK)
         else:
-            return Response({'data': 'No data available'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'message': 'No data available'}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class delete_wishlist_product_api(GenericAPIView):
@@ -465,26 +463,6 @@ class delete_user_api(GenericAPIView):
         deladdress.delete()
         return Response({'message': 'Deleted successfully'})
 
-
-class card_payment_api(GenericAPIView):
-    serializer_class = CardpaymentSerializer
-
-    def post(self, request):
-        userid = request.data.get('userid')
-        cardnumber = request.data.get('cardnumber')
-        validmonth = request.data.get('validmonth')
-        validyear = request.data.get('validyear')
-        cardccv = request.data.get('cardccv')
-        cardholder = request.data.get('cardholder')
-        paidamount = request.data.get('paidamount')
-
-        serializer = self.serializer_class(
-            data={'userid': userid, 'cardnumber': cardnumber, 'validmonth': validmonth, 'validyear': validyear, 'cardholder': cardholder, 'cardccv': cardccv, 'paidamount': paidamount})
-
-        if serializer.is_valid():
-            serializer.save()
-            return Response({'data': serializer.data, 'message': 'Payment successfull', 'success': 1}, status=status.HTTP_200_OK)
-        return Response({'data': serializer.errors, 'message': 'failed', 'success': 0}, status=status.HTTP_400_BAD_REQUEST)
 
 # OTP VERIFICATION
 
@@ -576,6 +554,8 @@ class password_change_api(GenericAPIView):
             return Response({'error': 'Passwords do not match'}, status=status.HTTP_400_BAD_REQUEST)
 
 
+# GENERATE QR CODE
+
 class generateqr_api(GenericAPIView):
 
     def post(self, request):
@@ -585,6 +565,56 @@ class generateqr_api(GenericAPIView):
         return Response({'message': 'QR Generated  successfully', 'success': 1}, status=status.HTTP_200_OK)
 
 
+
+
+
+# PLACE ORDER
+
+class place_order_api(GenericAPIView):
+    serializer_class = place_order_Serializer
+
+    def post(self, request):
+        user = request.data.get('user')
+        grandtotal = request.data.get('grandtotal')
+        # pyment_status = request.data.get('pyment_status')
+        carts = Cart.objects.filter(userid=user, cart_status=0)
+
+        if not carts.exists():
+            return Response({'message': 'No items in cart to place order', 'success': 1}, status=status.HTTP_200_OK)
+
+        # tot = carts.aggregate(total=sum('total_price'))['price']
+        # total=str(tot)
+
+        order_data = []
+
+        for i in carts:
+
+            order_data.append({
+                # 'pyment_status': pyment_status,
+                'grandtotal': grandtotal,
+                'user': user,
+                'productname': i.productname,
+                'productid': i.productid,
+                'quantity': i.quantity,
+                'color': i.color,
+                'size': i.size,
+                'image': i.image,
+                'category': i.category,
+                'gender': i.gender,
+                'order_status': '0'
+            })
+            i.cart_status = '1'
+            i.save()
+
+        serializer = self.serializer_class(data=order_data, many=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'data': serializer.data, 'message': 'order placed successfully', 'success': 1}, status=status.HTTP_200_OK)
+        return Response({'data': serializer.errors, 'message': 'failed', 'success': 0}, status=status.HTTP_400_BAD_REQUEST)
+
+
+# PAYMENT
+
 class final_pyment_api(GenericAPIView):
     serializer_class = Final_pyment_Serializer
 
@@ -593,10 +623,40 @@ class final_pyment_api(GenericAPIView):
         name = request.data.get('name')
         pyment_status = request.data.get('pyment_status')
         grandtotal = request.data.get('grandtotal')
+        pyment_type = request.data.get('pyment_type')
 
-        serializer = self.serializer_class(
-            data={'userid': userid, 'name': name, 'pyment_status': pyment_status, 'grandtotal': grandtotal})
+        data_delete = Cart.objects.filter(userid=userid, cart_status=1)
+        if data_delete.exists():
+            data_delete.delete()
 
+        order_d = place_order.objects.filter(user=userid, order_status=0)
+        print(order_d)
+        if not order_d.exists():
+            return Response({'message': 'No items in place order to proceed', 'success': 1}, status=status.HTTP_200_OK)
+
+        proceed_order = []
+
+        for i in order_d:
+
+            proceed_order.append({
+                'name':name,
+                'pyment_status': pyment_status,
+                'grandtotal': grandtotal,
+                'userid': userid,
+                'pyment_type' : pyment_type,
+                'productname': i.productname,
+                'productid': i.productid,
+                'quantity': i.quantity,
+                'color': i.color,
+                'size': i.size,
+                'image': i.image,
+                'category': i.category,
+                'gender': i.gender,
+            })
+            i.order_status = '1'
+            i.save()
+
+        serializer = self.serializer_class(data=proceed_order, many=True)
         if serializer.is_valid():
             serializer.save()
             return Response({'data': serializer.data, 'message': 'Payment successfull', 'success': 1}, status=status.HTTP_200_OK)
@@ -609,4 +669,24 @@ class generate_order_number(GenericAPIView):
         order_id = queryset.id
         order_number = order_id + 999
         # serializer = Final_pyment_Serializer(queryset)
-        return Response({ 'order_number':order_number})
+        return Response({'order_number': order_number})
+
+class card_payment_api(GenericAPIView):
+    serializer_class = CardpaymentSerializer
+
+    def post(self, request):
+        userid = request.data.get('userid')
+        cardnumber = request.data.get('cardnumber')
+        validmonth = request.data.get('validmonth')
+        validyear = request.data.get('validyear')
+        cardccv = request.data.get('cardccv')
+        cardholder = request.data.get('cardholder')
+        paidamount = request.data.get('paidamount')
+
+        serializer = self.serializer_class(
+            data={'userid': userid, 'cardnumber': cardnumber, 'validmonth': validmonth, 'validyear': validyear, 'cardholder': cardholder, 'cardccv': cardccv, 'paidamount': paidamount})
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'data': serializer.data, 'message': 'Payment successfull', 'success': 1}, status=status.HTTP_200_OK)
+        return Response({'data': serializer.errors, 'message': 'failed', 'success': 0}, status=status.HTTP_400_BAD_REQUEST)

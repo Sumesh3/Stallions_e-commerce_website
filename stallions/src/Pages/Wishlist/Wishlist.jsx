@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import Footer from '../Footer/Footer';
 
 export default function Wishlist() {
 
@@ -27,11 +28,11 @@ export default function Wishlist() {
 
         axios.delete(`http://127.0.0.1:8000/api/delete_wishlist_product_api/${deleteid}`).then((response) => {
             console.log(response);
-            const deleted = viewWishlist.filter((details)=>{
+            const deleted = viewWishlist.filter((details) => {
                 return details.id != deleteid
             })
             setviewWishlist(deleted)
-        
+
         })
     }
 
@@ -55,32 +56,48 @@ export default function Wishlist() {
             <div className='wishlist-nav'>
                 <Navbarf2 />
             </div>
-            <div className="container mt-5"><br />
-                <h4 class="text-center mb-3">My Wishlist</h4>
+            {
+                viewWishlist.length > 0 ?
+                    <div className="container mt-5"><br />
+                        <h4 class="text-center mb-3">My Wishlist</h4>
 
-                {
-                    viewWishlist.map((data, key) => (
-                        <>
-                            <div className="wishlist-item row">
-                                <div className="col-md-2">
-                                    <img src={`/clothes/media/${data.image}`} alt="" />
-                                </div>
-                                <div className="col-md-3 d-flex align-items-center ">
-                                    <div>
-                                        <h4>{data.productname}</h4>
-                                        <p className="mb-0"><CurrencyRupeeIcon fontSize='1px' />{data.price}</p>
+                        {
+                            viewWishlist.map((data, key) => (
+                                <>
+                                    <div className="wishlist-item row">
+                                        <div className="col-md-2">
+                                            <img src={`/clothes/media/${data.image}`} alt="" />
+                                        </div>
+                                        <div className="col-md-3 d-flex align-items-center ">
+                                            <div>
+                                                <h4>{data.productname}</h4>
+                                                <p className="mb-0"><CurrencyRupeeIcon fontSize='1px' />{data.price}</p>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-3 d-flex">
+                                            <button className="btn-add-to-cart" onClick={() => { productCart(data.productid) }}><AddShoppingCartIcon /></button>
+                                            <button className="delete_wishlist" onClick={() => { deletee(data.id) }}><DeleteIcon /></button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="col-md-3 d-flex">
-                                    <button className="btn-add-to-cart" onClick={() => { productCart(data.productid) }}><AddShoppingCartIcon /></button>
-                                    <button className="delete_wishlist" onClick={() => { deletee(data.id) }}><DeleteIcon /></button>
-                                </div>
-                            </div>
-                        </>
-                    ))
-                }<br /> <br />
+                                </>
+                            ))
+                        }<br /> <br />
 
+                    </div>
+                    :
+                    <div className="container mt-5"><br />
+                        <h4 class="text-center mb-3">My Wishlist</h4>
+
+                        <div style={{ textAlign: 'center' }} className="wishlist-item-p row">Empty</div>
+
+
+                    </div>
+
+            }
+            <div className='footer_wish'>
+                <Footer></Footer>
             </div>
+
         </>
     )
 }

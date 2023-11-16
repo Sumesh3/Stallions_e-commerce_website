@@ -3,7 +3,6 @@
 # from pyqrcode import QRCode
 # s = 456765
 # url = pyqrcode.create(s)
-# url.png(r'D:\GitHub\Stallions_e-commerce_website\stallions\public\clothes\media\qr\myqr.png', scale = 6)
 
 import qrcode
 def Generateqr(sum):
@@ -17,6 +16,5 @@ def Generateqr(sum):
 
     # Generate QR code
     qr = qrcode.make(upi_url)
-
     # Save the QR code as image
     qr.save(r"media\images\QR\upi_qr.png")

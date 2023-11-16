@@ -43,8 +43,8 @@ export default function DebitCard() {
         }
 
         axios.post('http://127.0.0.1:8000/api/final_pyment_api', data).then((response) => {
-            console.log(response.data.data);
-            navigate(`/paymentsuccessful/${response.data.data.id}`)
+            console.log(response.data.data.id);
+            // navigate(`/paymentsuccessful/${response.data.data.id}`)
         }).catch((error) => {
             console.log(error);
         })

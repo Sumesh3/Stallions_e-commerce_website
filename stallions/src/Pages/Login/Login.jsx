@@ -5,7 +5,6 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
-import Footer from '../Footer/Footer'
 
 export default function Login() {
 
@@ -35,15 +34,12 @@ export default function Login() {
         return error
     }
 
-
-
     const continew = (event) => {
         event.preventDefault()
         setFormerrors(validate(loginputs))
         if (Object.keys(Formerrors).length === 0) {
             axios.post("http://127.0.0.1:8000/api/login_api", loginputs).then((response) => {
                 console.log(response)
-
                 if (response.data.data.role == 'user') {
                     localStorage.setItem("email", response.data.data.email)
                     localStorage.setItem("role", response.data.data.role)
@@ -51,7 +47,6 @@ export default function Login() {
                     localStorage.setItem("login_id", response.data.data.login_id)
                     navigate('/')
                 }
-
                 if (response.data.data.role == 'Admin') {
                     localStorage.setItem("email", response.data.data.email)
                     localStorage.setItem("role", response.data.data.role)
@@ -72,10 +67,8 @@ export default function Login() {
                         theme: "colored",
                     });
                     console.log(error);
-
                 })
         }
-
     }
 
     return (
@@ -84,31 +77,31 @@ export default function Login() {
                 <Navbarf2></Navbarf2>
             </div>
             <ToastContainer></ToastContainer>
-            <form>
-                <div className='container login-container col-lg-12 col-md-12 col-sm-12'>
-                    <div className='login-head'>Log in</div>
+            <div className='container'>
+                <form>
+                    <div className='container login_container'>
+                        <div className='login-head'>Log in</div>
 
-                    <div className='login-name'>E-mail</div>
-                    <input className='login-text' type="text" name='email' onChange={loginData} />
+                        <div className='login-name'>E-mail</div>
+                        <input className='login-text' type="text" name='email' onChange={loginData} />
 
-                    <div className='login-name'>Password</div>
-                    <input className='login-text' type="password" name='password' onChange={loginData} />
-                    <div>
-                        <a className='login-forgot' href="/forgotpassword">Forgot Password ?</a>
-                    </div>
-                    <center>
-                        <button className='login-continue' onClick={continew}>Continue</button>
-                    </center>
-                    <hr></hr>
-                    <div className='login-sign'>
+                        <div className='login-name'>Password</div>
+                        <input className='login-text' type="password" name='password' onChange={loginData} />
+                        <div className='container'>
+                            <a className='login-forgot' href="/forgotpassword">Forgot Password ?</a>
+                        </div>
                         <center>
-                            <p>Don't have an account ?  <a className='login-ang' href="/registration">Sign up</a></p>
+                            <button className='login-continue' onClick={continew}>Continue</button>
                         </center>
+                        <hr></hr>
+                        <div className='login-sign'>
+                            <center>
+                                <p>Don't have an account ?  <a className='login-ang' href="/registration">Sign up</a></p>
+                            </center>
+                        </div>
                     </div>
-
-                </div>
-            </form>
-            <Footer></Footer>
+                </form>
+            </div>
         </>
     )
 }

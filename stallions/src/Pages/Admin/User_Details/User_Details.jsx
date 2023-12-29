@@ -39,40 +39,43 @@ export default function User_Details() {
             <div className='admin-user-nav'>
                 <Navbarf2></Navbarf2>
             </div>
-            <div className="container admin-view-user">
-                <table className="table table-admin table-bordered" border={1} cellPadding={20} cellSpacing={0}>
-                    <thead>
-                        <tr>
-                            <th>Sl.No</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone Number</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <>
-                        {
-                            filterUser.map((data, key) => (
-                                <>
-                                    <tbody>
-                                        <tr>
-                                            <td>{key + 1}</td>
-                                            <td>{data.name}</td>
-                                            <td>{data.email}</td>
-                                            <td>{data.number}</td>
-                                            <td>
-                                                <center>
-                                                    <button className="btn btn-danger text-dark" onClick={() => { deletee(data.id) }}>Delete</button>
-                                                </center>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </>
-                            ))
-                        }
-                    </>
-                </table>
+            <div className='container'>
+                <div className="admin-view-user">
+                    <table className="table table-admin table-bordered" border={1} cellPadding={20} cellSpacing={0}>
+                        <thead>
+                            <tr>
+                                <th>Sl.No</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <>
+                            {
+                                filterUser.map((data, key) => (
+                                    <>
+                                        <tbody>
+                                            <tr>
+                                                <td>{key + 1}</td>
+                                                <td>{data.name}</td>
+                                                <td>{data.email}</td>
+                                                <td>{data.number}</td>
+                                                <td>
+                                                    <center>
+                                                        <button className="btn btn-danger text-dark" onClick={() => { deletee(data.id) }}>Delete</button>
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </>
+                                ))
+                            }
+                        </>
+                    </table>
+                </div>
             </div>
         </>
+
     )
 }

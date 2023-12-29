@@ -1,14 +1,12 @@
 import React from 'react'
 import Navbar from '../../Components/Navbarfirst/Navbar'
-import Home from '../Home_Page/Home'
-import Footer from '../Footer/Footer'
+import HomePage from '../Home_Page/HomePage'
 
 export default function MainPage() {
   return (
     <>
       <Navbar></Navbar>
-      <Home></Home>
-      <Footer></Footer>
+      <HomePage></HomePage>
     </>
   )
 }

@@ -16,6 +16,7 @@
 }
 
 .qr-container {
+    position: relative;
     text-align: center;
     background-color: #fff;
     border-radius: 10px;
@@ -24,25 +25,28 @@
 }
 
 .qr-code {
+    position: relative;
     max-width: 300px;
     max-height: 300px;
     margin-bottom: 20px;
 }
 
 .qr_head {
+    position: relative;
     color: #333;
     font-size: 2em;
     margin-bottom: 10px;
 }
 
 .qr_cont {
+    position: relative;
     color: #555;
     font-size: 1.2em;
 }
 
 .qr_button{
     position: absolute;
-    top: 9.6cm;
+    top: 9.3cm;
     background-color: transparent;
     border-radius: 5px;
     border: none;

@@ -67,7 +67,6 @@ export default function Address() {
                                         </div>
                                         <div className="card-body">
                                             <form>
-
                                                 <div className="address_form-groups col-md-5">
                                                     <label>Name</label>
                                                     <input type="text" className="form-control address_input_form" name='name' placeholder="Enter Name" required onChange={addDetails} />

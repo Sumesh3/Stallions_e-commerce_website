@@ -52,17 +52,19 @@ export default function ChangePassword() {
                 <Navbarf2></Navbarf2>
             </div>
             <ToastContainer></ToastContainer>
-            <center>
-                <div className="changepass_main">
-                    <div className="changepass_section">
-                        <h2 className='changepass_headding'>Change Password</h2><br></br>
-                        <input className="changepass-input" type="password" placeholder="Current Password" name='currentpass' onChange={passwords} />
-                        <input className="changepass-input" type="password" placeholder="New Password" name='newpass' onChange={passwords} />
-                        <input className="changepass-input" type="password" placeholder="Confirm New Password" name='updatepass' onChange={passwords} />
-                        <button className="changepass_button" onClick={updatepass}>Save Password</button>
+            <div className='container'>
+                <center>
+                    <div className="changepass_main">
+                        <div className="changepass_section">
+                            <h2 className='changepass_headding'>Change Password</h2><br></br>
+                            <input className="changepass-input" type="password" placeholder="Current Password" name='currentpass' onChange={passwords} />
+                            <input className="changepass-input" type="password" placeholder="New Password" name='newpass' onChange={passwords} />
+                            <input className="changepass-input" type="password" placeholder="Confirm New Password" name='updatepass' onChange={passwords} />
+                            <button className="changepass_button" onClick={updatepass}>Save Password</button>
+                        </div>
                     </div>
-                </div>
-            </center>
+                </center>
+            </div>
         </>
     )
 }

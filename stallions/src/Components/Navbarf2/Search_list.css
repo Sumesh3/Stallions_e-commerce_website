@@ -1,5 +1,6 @@
 .search_item {
     position: relative;
+    top: 0;
     display: block;
     background-color: #fff;
     padding: 5px;

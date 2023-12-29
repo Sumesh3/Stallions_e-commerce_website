@@ -1,24 +1,8 @@
-@media (max-width: 768px) {
-    .view-admin {
-        top: -29px;
-    }
-
-    .card-outer {
-        width: 100%;
-        margin: 5px 0;
-    }
-
-    .ptitle-price {
-        font-size: 14px;
-    }
-}
-
 .view-admin {
     position: absolute;
     top: -49px;
     z-index: 1;
 }
-
 
 .card-outer {
     position: relative;

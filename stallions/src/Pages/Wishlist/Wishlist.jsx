@@ -7,7 +7,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import Footer from '../Footer/Footer';
 
 export default function Wishlist() {
 
@@ -88,16 +87,11 @@ export default function Wishlist() {
                     <div className="container mt-5"><br />
                         <h4 class="text-center mb-3">My Wishlist</h4>
 
-                        <div style={{ textAlign: 'center' }} className="wishlist-item-p row">Empty</div>
+                        <div className="wishlist-item-p row">Empty</div>
 
 
                     </div>
-
             }
-            <div className='footer_wish'>
-                <Footer></Footer>
-            </div>
-
         </>
     )
 }

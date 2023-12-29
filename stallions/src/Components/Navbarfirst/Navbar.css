@@ -1,16 +1,4 @@
-@media (max-width: 768px) {
-    .header__top__left, .header__top__right {
-        text-align: center;
-    }
-    
-    .sign-in {
-        display: block;
-        margin: 0 auto; 
-        right: 0;
-    }
-}
-
-.header_n{
+.header_n {
     position: fixed;
     background-color: black;
     color: #fff;
@@ -20,12 +8,19 @@
     display: inline;
     z-index: 1;
 }
-.head-text{
+
+.aaaa{
+    position: relative;
+    top: -75px;
+}
+
+.head-text {
     position: relative;
     left: 1.5cm;
     font-size: 1em;
 }
-.sign-in{
+
+.sign-in {
     text-decoration: none;
     color: #fff;
     position: relative;
@@ -34,12 +29,29 @@
     cursor: pointer;
     font-size: 0.9375em;
 }
-.sign-in:hover{
+
+.sign-in:hover {
     color: blueviolet;
 }
-.header__top__left{
+
+.header__top__left {
     text-align: left;
 }
-.header__top__right{
+
+.header__top__right {
     text-align: right;
 }
+
+@media screen and (max-width: 768px) {
+    .header__top__left {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .header__top__right{
+        padding-bottom: 16px;
+        margin-left: 70px;
+    }
+  }

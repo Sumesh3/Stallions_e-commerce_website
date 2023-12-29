@@ -16,6 +16,7 @@ export default function Navbar() {
 
   return (
     <>
+    <div className='aaaa'>
       <div className='col-lg-12 col-md-12  header_n header'>
         <div className='row'>
           <div className='header__top__left col-lg-6 col-md-7'>
@@ -27,7 +28,8 @@ export default function Navbar() {
         </div>
       </div>
       <Navbarf2></Navbarf2>
-      <NavMenu></NavMenu>
+      </div>
+      {/* <NavMenu></NavMenu> */}
     </>
   )
 }

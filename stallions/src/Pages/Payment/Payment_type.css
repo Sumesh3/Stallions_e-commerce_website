@@ -13,7 +13,7 @@ top: -50px;
     min-block-size: 100vh;
     padding: 5vmin;
     place-items: center;
-    
+    margin-bottom: 75px;
 }
 
 .iphone {

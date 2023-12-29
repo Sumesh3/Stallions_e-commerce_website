@@ -1,36 +1,6 @@
-@media (max-width: 768px) {
-    .breadcrumb-option {
-        top: 50px;
-    }
-
-    .breadcrumb__links a {
-        font-size: 16px;
-    }
-
-    .breadcrumb_shop {
-        font-size: 14px;
-    }
-
-    .spad {
-        top: 50px;
-    }
-
-    .shop__sidebar {
-        margin-bottom: 30px;
-    }
-
-    .shop__sidebar__search {
-        margin-bottom: 20px;
-    }
-
-    .shop__sidebar__accordion .card-heading a {
-        font-size: 14px;
-    }
-
-    .shop__sidebar__categories ul li a {
-        font-size: 14px;
-        line-height: 28px;
-    }
+.shop_nav{
+position: relative;
+top: 26px;
 }
 
 .breadcrumb-option {

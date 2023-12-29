@@ -123,9 +123,9 @@ export default function Cart() {
                                 <p>Subtotal :<CurrencyRupeeIcon fontSize='10px' />{total}</p>
                                 <p>Tax :<CurrencyRupeeIcon fontSize='10px' />{total * .09}</p>
                                 <p className="total-price">Total :<CurrencyRupeeIcon fontSize='10px' />{total + (total * .09)}</p>
-                              
+
                                 <button onClick={submit} className="btn checkout-btn btn-block">Proceed to Checkout</button>
-                             
+
                                 <a href="/shop" class="continue-shopping">Continue Shopping</a>
                             </div>
                         </div>
@@ -133,11 +133,11 @@ export default function Cart() {
                     </div>
                     :
                     <center>
-                        <div className="cart-container mt-4 mb-5">NO PRODUCT IN YOUR CART</div>
+                        <div className='container'>
+                            <div className="cart-container mt-4 mb-5">NO PRODUCT IN YOUR CART</div>
+                        </div>
                     </center>
             }
-
-            <Footer></Footer>
         </>
     )
 }

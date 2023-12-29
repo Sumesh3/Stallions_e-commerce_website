@@ -1,7 +1,6 @@
 .upi-nav {
     position: relative;
     top: -50px;
-
 }
 
 .upi-main {
@@ -12,7 +11,8 @@
 }
 
 .container-upi {
-    margin-top: 140px;
+    margin-top: 90px;
+    margin-bottom: 35px;
     width: 500px;
     background-color: #fff;
     border-radius: 10px;

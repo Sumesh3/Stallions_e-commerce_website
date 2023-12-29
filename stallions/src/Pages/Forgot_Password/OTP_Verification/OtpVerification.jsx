@@ -39,18 +39,20 @@ export default function OtpVerification() {
             <div className='otp_nav'>
                 <Navbarf2></Navbarf2>
             </div>
-            <div class="container otp_main">
-                <h1 className='otp'>OTP Verification</h1>
-                <form>
-                    <center><div className='otpemail'>Email : email@gmail.com</div></center>
-                    <table>
-                        <tr>
-                            <td className='otptd'>OTP</td>
-                            <td className='otptd'>: <input class="textotp" type="text" placeholder="Enter Your OTP" name='otp' onChange={otpupdation}/></td>
-                        </tr>
-                    </table>
-                    <center><input class="otp_submit" type="submit" value="Send" onClick={otpsubmit} /></center><br /><br />
-                </form>
+            <div className='container'>
+                <div class="otp_main">
+                    <h1 className='otp'>OTP Verification</h1>
+                    <form>
+                        <center><div className='otpemail'>Email : email@gmail.com</div></center>
+                        <table>
+                            <tr>
+                                <td className='otptd'>OTP</td>
+                                <td className='otptd'>: <input class="textotp" type="text" placeholder="Enter Your OTP" name='otp' onChange={otpupdation} /></td>
+                            </tr>
+                        </table>
+                        <center><input class="otp_submit" type="submit" value="Send" onClick={otpsubmit} /></center><br /><br />
+                    </form>
+                </div>
             </div>
         </>
     )

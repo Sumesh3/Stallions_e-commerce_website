@@ -38,7 +38,7 @@ export default function UPIpayment() {
             <div className='upi-nav'>
                 <Navbarf2></Navbarf2>
             </div>
-            <div className='upi-main'>
+            <div className='upi-main container'>
                 <div className="container-upi">
                     <h1 className='upi-head'>Enter UPI Details</h1>
 

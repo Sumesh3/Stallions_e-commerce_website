@@ -7,7 +7,7 @@
 }
 
 .datpayment-form {
-    width: 500px;
+    max-width: 500px;
     font-size: 15px;
     background: #fff;
     color: #333333;
@@ -16,7 +16,6 @@
     padding: 10px;
     margin: auto;
     margin-top: 75px;
-
 }
 
 .dpf-title {

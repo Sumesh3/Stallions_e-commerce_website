@@ -1,45 +1,16 @@
-@media (max-width: 768px) {
-    .login-container {
-        width: 80%;
-        margin: 50px auto;
-        padding: 30px;
-    }
-
-    .login-head {
-        font-size: 20px;
-    }
-
-    .login-text,
-    .login-name {
-        font-size: 14px;
-    }
-
-    .login-continue {
-        width: 100%;
-    }
-
-    .login-forgot {
-        left: 0;
-        text-align: center;
-    }
-}
-
 .login_navfix {
     position: relative;
     top: -150px;
 }
 
-.login-container {
+.login_container {
     position: relative;
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
-    width: 530px;
+    max-width: 530px;
     margin: 100px auto;
-    /* border: 1px solid #323131; */
     padding: 40px 50px;
     box-shadow: 0px 0px 22px 0px #df2e2e89;
-
-
 }
 
 .login-head {
@@ -118,8 +89,8 @@
 
 .login-forgot {
     position: relative;
-    left: 8.1cm;
-    top: -10px;
+    left: 7.1cm;
+    top: -5px;
     font-size: 14px;
     font-family: cursive;
     color: rgba(66, 29, 47, 0.822);

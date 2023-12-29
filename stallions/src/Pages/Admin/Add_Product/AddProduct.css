@@ -1,25 +1,3 @@
-@media (max-width: 768px) {
-    .add-admin {
-        top: -77px;
-    }
-
-    .prdmain {
-        top: 15px;
-    }
-
-    .cardss {
-        margin-bottom: 20px;
-    }
-
-    .category-grid {
-        grid-template-columns: 100%;
-    }
-
-    .gender-views {
-        margin-left: 0;
-    }
-}
-
 .add-admin {
     position: relative;
     top: -97px;
@@ -29,6 +7,7 @@
 .prdmain {
     position: relative;
     top: 35px;
+    margin-bottom: 30px;
 }
 
 .cardss {
@@ -129,13 +108,10 @@
     visibility: hidden;
 }
 
-
-
 .shop__size {
     display: inline-block;
     position: relative;
     left: -9px;
-    /* padding-top: 15px; */
 }
 
 .shop__size label {

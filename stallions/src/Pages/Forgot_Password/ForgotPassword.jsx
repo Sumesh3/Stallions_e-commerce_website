@@ -21,7 +21,6 @@ export default function ForgotPassword() {
         e.preventDefault()
         axios.post("http://127.0.0.1:8000/api/OTP_Verification_API", forgotpswd).then((response) => {
             console.log(response)
-
             toast.success(response.data.message, {
                 icon: '👏',
                 position: "bottom-center",
@@ -56,18 +55,19 @@ export default function ForgotPassword() {
             <div className='for_nav'>
                 <Navbarf2></Navbarf2>
             </div>
-            <div class="container forgot_main">
-                <h1 className='forgot_head'>Forgot Password</h1>
-                <form>
-                    <table>
-                        <tr>
-                            <td className='td_pass'>Email</td>
-                            <td className='td_pass'>: <input class="forgot_text" type="email" placeholder="Enter Your Email" name='email' onChange={forgotpassword} /></td>
-                        </tr>
-                    </table>
-                    <center><input class="forgot_submit" type="submit" value="Send" onClick={forgot} /></center><br /><br />
-                </form>
-
+            <div className='container'>
+                <div class="forgot_main">
+                    <h1 className='forgot_head'>Forgot Password</h1>
+                    <form>
+                        <table>
+                            <tr>
+                                <td className='td_pass'>Email</td>
+                                <td className='td_pass'>: <input class="forgot_text" type="email" placeholder="Enter Your Email" name='email' onChange={forgotpassword} /></td>
+                            </tr>
+                        </table>
+                        <center><input class="forgot_submit" type="submit" value="Send" onClick={forgot} /></center><br /><br />
+                    </form>
+                </div>
             </div>
         </>
     )

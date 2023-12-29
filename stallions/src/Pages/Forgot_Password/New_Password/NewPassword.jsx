@@ -52,16 +52,19 @@ export default function NewPassword() {
             <div className='newpass_nav'>
                 <Navbarf2></Navbarf2>
             </div>
-            <div class="container newpass_main">
-                <h1 className='change_head'>Change Password</h1>
+            <div className='container'>
                 <center>
-                    <input class="textnewpass" type="password" name='pass' placeholder="New Password" onChange={newpassword}></input>
-                    <input class="textnewpass" type="password" name='cpass' placeholder="Confirm New Password" onChange={newpassword}></input>
+                    <div class="newpass_main">
+                        <h1 className='change_head'>Change Password</h1>
+                        <center>
+                            <input class="textnewpass" type="password" name='pass' placeholder="New Password" onChange={newpassword}></input>
+                            <input class="textnewpass" type="password" name='cpass' placeholder="Confirm New Password" onChange={newpassword}></input>
+                        </center>
+                        <center>
+                            <button class="newpass_submit" onClick={savepassword}>Save Password</button><br></br><br></br>
+                        </center>
+                    </div>
                 </center>
-                <center>
-                    <button class="newpass_submit" onClick={savepassword}>Save Password</button><br></br><br></br>
-                </center>
-
             </div>
         </>
     )

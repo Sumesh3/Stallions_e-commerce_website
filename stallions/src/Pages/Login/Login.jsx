@@ -46,6 +46,7 @@ export default function Login() {
                     localStorage.setItem("user_id", response.data.data.user_id)
                     localStorage.setItem("login_id", response.data.data.login_id)
                     navigate('/')
+                    window.location.reload()
                 }
                 if (response.data.data.role == 'Admin') {
                     localStorage.setItem("email", response.data.data.email)
@@ -53,6 +54,7 @@ export default function Login() {
                     localStorage.setItem("user_id", response.data.data.user_id)
                     localStorage.setItem("login_id", response.data.data.login_id)
                     navigate('/')
+                    window.location.reload()
                 }
             })
                 .catch((error) => {

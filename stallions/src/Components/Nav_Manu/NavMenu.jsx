@@ -21,7 +21,9 @@ export default function NavMenu() {
     const navigate = useNavigate()
     const clears = () => {
         localStorage.clear()
+        sessionStorage.clear()
         navigate('/')
+        window.location.reload()
     }
 
     let data = localStorage.getItem("role")

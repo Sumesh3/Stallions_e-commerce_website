@@ -27,6 +27,7 @@ export default function UPIpayment() {
         axios.post('http://127.0.0.1:8000/api/final_pyment_api', data).then((response) => {
             console.log(response.data.data);
             navigate(`/paymentsuccessful/${response.data.data.id}`)
+            window.location.reload()
         }).catch((error) => {
             console.log(error);
         })

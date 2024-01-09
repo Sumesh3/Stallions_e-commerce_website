@@ -80,6 +80,7 @@ export default function Payment_type() {
     const payamount = () => {
         if (paytype === 'upi') {
             navigate('/upipayment')
+            window.location.reload()
         }
 
         if (paytype === 'QR_scan') {
@@ -93,9 +94,11 @@ export default function Payment_type() {
 
                 })
             navigate('/qrpayment')
+            window.location.reload()
         }
         if (paytype === 'debit_card') {
             navigate('/debitcard')
+            window.location.reload()
         }
 
         if (paytype === 'cod') {
@@ -111,10 +114,11 @@ export default function Payment_type() {
             axios.post('http://127.0.0.1:8000/api/final_pyment_api', data).then((response) => {
                 console.log(response.data.data.id);
                 navigate(`/paymentsuccessful/${response.data.data.id}`)
+                window.location.reload()
             })
-            .catch((error) => {
-                console.log(error);
-            }) 
+                .catch((error) => {
+                    console.log(error);
+                })
         }
     }
 

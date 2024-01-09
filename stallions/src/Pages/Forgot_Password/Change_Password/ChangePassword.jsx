@@ -27,7 +27,7 @@ export default function ChangePassword() {
         axios.put(`http://127.0.0.1:8000/api/password_change_api/${userid}`, changePass).then((response) => {
             console.log(response)
             navigate('/')
-
+            window.location.reload()
         })
             .catch((error) => {
                 toast.error(error.response.data.error, {

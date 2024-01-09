@@ -8,6 +8,7 @@ import { toast } from 'react-toastify'
 export default function OtpVerification() {
     const navigate = useNavigate()
     const [otpverification, getotpverification] = useState({})
+    
     const otpupdation = (event) => {
         const name = event.target.name
         const value = event.target.value

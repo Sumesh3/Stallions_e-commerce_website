@@ -14,7 +14,7 @@ export default function HomePage() {
 
             <div className='main_hom test img-responsive'>
                 <div className='hom_sub'>
-                    <img className='img_hom' src="Assets\Images\hero-1.jpg" width={'100%'} height={'100%'} alt="" />
+                    <img className='img_hom' src="Assets\Images\frond_page5.jpg" width={'100%'} height={'100%'} alt="" />
                     <div className="hom_text">
                         <h6 className='head_hom1'>Summer Collection</h6>
                         <h2 className='head_hom2'>Winter Collections 2023</h2>

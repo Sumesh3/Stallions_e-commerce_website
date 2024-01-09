@@ -14,6 +14,7 @@ export default function PaymentSuccessful() {
         axios.get(`http://127.0.0.1:8000/api/generate_order_number/${id}`).then((response) => {
             setOrdernumber(response.data.order_number)
             console.log(response.data.order_number);
+            window.location.reload()
         }).catch((error) => {
             console.log(error);
         })

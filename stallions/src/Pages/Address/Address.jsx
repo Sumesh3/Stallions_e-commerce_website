@@ -41,6 +41,7 @@ export default function Address() {
         axios.post('http://127.0.0.1:8000/api/address_api', input).then((response) => {
             navigate('/paymenttype')
             console.log(response);
+            window.location.reload()
         })
             .catch((error) => {
                 console.log(error.response.data.message);

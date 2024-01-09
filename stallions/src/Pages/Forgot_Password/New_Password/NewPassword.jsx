@@ -29,7 +29,7 @@ export default function NewPassword() {
                 '',
                 'success'
             ).then(() => {
-                navigate('/home')
+                navigate('/')
             })
         })
             .catch((err) => {

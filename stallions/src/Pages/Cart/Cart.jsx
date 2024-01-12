@@ -75,6 +75,7 @@ export default function Cart() {
         axios.post('http://127.0.0.1:8000/api/place_order_api', data).then((response) => {
             console.log(response.data);
             navigate('/address')
+            window.location.reload()
         }).catch((error) => {
             console.log(error);
         })

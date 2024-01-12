@@ -123,7 +123,6 @@ class Final_pyment(models.Model):
     productname = models.CharField(max_length=200)
     productid = models.CharField(max_length=200)
     quantity = models.CharField(max_length=200)
-    color = models.CharField(max_length=200)
     size = models.CharField(max_length=200)
     image = models.CharField(max_length=200)
     category = models.CharField(max_length=200)

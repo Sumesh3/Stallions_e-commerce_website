@@ -62,9 +62,9 @@ export default function Navbarf2() {
               <ul className='header_ul'>
                 <li className='header_li'><a className='header_a' href='/'>Home</a></li>
                 <li className='header_li'><a className='header_a' href='/shop'>Shop</a></li>
-                <li className='header_li'><a className='header_a' href='#'>Blog</a></li>
                 <li className='header_li'><a className='header_a' href='#'>About Us</a></li>
                 <li className='header_li '><a className='header_a' href='#'>Contacts</a></li>
+                <li className='header_li '><a className='header_a' href='/orderedproducts'>Orders</a></li>
               </ul>
               <ul className='header_ul ul_sec '>
                 <div className='header_second'>
@@ -143,7 +143,6 @@ export default function Navbarf2() {
               <div className='header_one'>
                 <ul className='header_ul'>
                   <li className='header_li'><a className='header_a' href='/'>Home</a></li>
-                  <li className='header_li'><a className='header_a' href='#'>Blog</a></li>
                   <li className='header_li'><a className='header_a' href='#'>About Us</a></li>
                   <li className='header_li '><a className='header_a' href='#'>Contacts</a></li>
                 </ul>

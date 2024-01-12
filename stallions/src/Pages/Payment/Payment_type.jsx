@@ -7,7 +7,6 @@ import upi_icon from './upi_icon.svg'
 import qr_scan from './qr_scan.svg'
 import credit_card from './credit_card.svg'
 import cod from './cod.svg'
-import EditIcon from '@mui/icons-material/Edit';
 import Navbarf2 from '../../Components/Navbarf2/Navbarf2'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -32,7 +31,7 @@ export default function Payment_type() {
 
     const [total, settotal] = useState(0)
     const priceTotal = total + (total * .09)
-    const discount = (total + (total * .09)) * .01
+    const discount = (total + (total * .09)) * .1
 
     const shippingCharge = priceTotal >= 500 ? 0 : 40
 
@@ -89,6 +88,7 @@ export default function Payment_type() {
             }
             axios.post("http://127.0.0.1:8000/api/generateqr_api", data).then((response) => {
                 console.log(response);
+                window.location.reload()
             })
                 .catch((error) => {
 
@@ -113,7 +113,7 @@ export default function Payment_type() {
 
             axios.post('http://127.0.0.1:8000/api/final_pyment_api', data).then((response) => {
                 console.log(response.data.data.id);
-                navigate(`/paymentsuccessful/${response.data.data.id}`)
+                navigate(`/paymentsuccessful/${response.data.data[0].id}`)
                 window.location.reload()
             })
                 .catch((error) => {
@@ -127,7 +127,6 @@ export default function Payment_type() {
         getpaytype(pymenttype)
     }
     console.log(paytype);
-
 
     return (
         <>

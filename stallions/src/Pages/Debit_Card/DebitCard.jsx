@@ -37,14 +37,16 @@ export default function DebitCard() {
 		event.preventDefault()
 		const data = {
 			userid: localStorage.getItem('login_id'),
-			grandtotal: amount,
-			pyment_status: 1,
-			name: holdername
+            grandtotal: sessionStorage.getItem('amount'),
+            pyment_status: 1,
+            name: sessionStorage.getItem('holdername'),
+            pyment_type: 'Prepaid'
 		}
 
 		axios.post('http://127.0.0.1:8000/api/final_pyment_api', data).then((response) => {
-			console.log(response.data.data.id);
-			// navigate(`/paymentsuccessful/${response.data.data.id}`)
+			// console.log(response.data.data.id);
+			navigate(`/paymentsuccessful/${response.data.data[0].id}`)
+			window.location.reload()
 		}).catch((error) => {
 			console.log(error);
 		})

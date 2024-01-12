@@ -14,6 +14,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
 import ContentPasteIcon from '@mui/icons-material/ContentPaste';
 import BusinessIcon from '@mui/icons-material/Business';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 
 export default function NavMenu() {
     let user = localStorage.getItem("email")
@@ -37,10 +38,10 @@ export default function NavMenu() {
                         <a href='/'><HomeIcon />Home</a>
                         <a href="/shop"><Store />Shop</a>
                         <a href="#"><BusinessIcon />About Us</a>
-                        <a href="#"><ContentPasteIcon />Blog</a>
                         <a href="#"><ContactPageIcon />Contacts</a>
                         <a href="/wishlist"><FavoriteIcon />Wishlist</a>
                         <a href="/cart"><ShoppingCartIcon />Cart</a>
+                        <a href="/orderedproducts"><LocalShippingIcon />Orders</a>
                         {user ? <a onClick={clears}> <LogoutIcon />  LOG OUT</a> : <a href="/registration"><Person />     Register</a>}
                     </div>
                 </div>
@@ -62,7 +63,6 @@ export default function NavMenu() {
                         <div className='menu_dropdown-content dropdown-content'>
                             <a href='/'><HomeIcon />Home</a>
                             <a href="#"><BusinessIcon />About Us</a>
-                            <a href="#"><ContentPasteIcon />Blog</a>
                             <a href="#"><ContactPageIcon />Contacts</a>
                             {user ? <a onClick={clears}> <LogoutIcon />  LOG OUT</a> : <a href="/registration"><Person />     Register</a>}
                         </div>

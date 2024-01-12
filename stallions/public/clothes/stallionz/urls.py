@@ -46,6 +46,8 @@ urlpatterns = [
     path("update_single_product_api/<int:id>", views.update_single_product_api.as_view(), name="update_single_product_api"),
 
     path("place_order_api", views.place_order_api.as_view(), name="place_order_api"),
-
+    
     path("card_payment_api", views.card_payment_api.as_view(), name="card_payment_api"),
+
+    path("view_all_orders_api/<int:id>", views.view_all_orders_api.as_view(), name="view_all_orders_api"),
 ]

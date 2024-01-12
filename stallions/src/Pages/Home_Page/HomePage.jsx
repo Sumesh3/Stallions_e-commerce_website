@@ -105,7 +105,7 @@ export default function HomePage() {
                         </div>
                     </div>
                     <div className="row product__filter">
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                        <Link  to={user ? '/shop' : '/login'} className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                             <div className="product__item">
                                 <div className="product__item__pic set-bg">
                                     <ul className="product__hover">
@@ -118,8 +118,8 @@ export default function HomePage() {
                                     <a className="add-cart"><CurrencyRupeeIcon fontSize='1px' /> 499</a>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                        </Link>
+                        <Link to={user ? '/shop' : '/login'} className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                             <div className="product__item">
                                 <div className="product__item__pic set-bg">
                                     <ul className="product__hover">
@@ -132,8 +132,8 @@ export default function HomePage() {
                                     <a className="add-cart"><CurrencyRupeeIcon fontSize='1px' /> 499</a>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                        </Link>
+                        <Link to={user ? '/shop' : '/login'} className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                             <div className="product__item">
                                 <div className="product__item__pic set-bg">
                                     <ul className="product__hover">
@@ -146,8 +146,8 @@ export default function HomePage() {
                                     <a className="add-cart"><CurrencyRupeeIcon fontSize='1px' /> 499</a>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                        </Link>
+                        <Link to={user ? '/shop' : '/login'} className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                             <div className="product__item">
                                 <div className="product__item__pic set-bg">
                                     <ul className="product__hover">
@@ -160,8 +160,8 @@ export default function HomePage() {
                                     <a className="add-cart"><CurrencyRupeeIcon fontSize='1px' /> 499</a>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                        </Link>
+                        <Link to={user ? '/shop' : '/login'} className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                             <div className="product__item">
                                 <div className="product__item__pic set-bg">
                                     <ul className="product__hover">
@@ -174,8 +174,8 @@ export default function HomePage() {
                                     <a className="add-cart"><CurrencyRupeeIcon fontSize='1px' /> 499</a>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                        </Link>
+                        <Link to={user ? '/shop' : '/login'} className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                             <div className="product__item">
                                 <div className="product__item__pic set-bg">
                                     <ul className="product__hover">
@@ -188,8 +188,8 @@ export default function HomePage() {
                                     <a className="add-cart"><CurrencyRupeeIcon fontSize='1px' /> 499</a>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                        </Link>
+                        <Link to={user ? '/shop' : '/login'} className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                             <div className="product__item">
                                 <div className="product__item__pic set-bg">
                                     <ul className="product__hover">
@@ -202,8 +202,8 @@ export default function HomePage() {
                                     <a className="add-cart"><CurrencyRupeeIcon fontSize='1px' /> 499</a>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                        </Link>
+                        <Link to={user ? '/shop' : '/login'} className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                             <div className="product__item">
                                 <div className="product__item__pic set-bg">
                                     <ul className="product__hover">
@@ -216,7 +216,7 @@ export default function HomePage() {
                                     <a className="add-cart"><CurrencyRupeeIcon fontSize='1px' /> 499</a>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 </div>
             </section>

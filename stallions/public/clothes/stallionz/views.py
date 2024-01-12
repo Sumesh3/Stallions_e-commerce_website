@@ -564,11 +564,8 @@ class generateqr_api(GenericAPIView):
         Generateqr(grandtotal)
         return Response({'message': 'QR Generated  successfully', 'success': 1}, status=status.HTTP_200_OK)
 
-
-
-
-
 # PLACE ORDER
+
 
 class place_order_api(GenericAPIView):
     serializer_class = place_order_Serializer
@@ -639,15 +636,14 @@ class final_pyment_api(GenericAPIView):
         for i in order_d:
 
             proceed_order.append({
-                'name':name,
+                'name': name,
                 'pyment_status': pyment_status,
                 'grandtotal': grandtotal,
                 'userid': userid,
-                'pyment_type' : pyment_type,
+                'pyment_type': pyment_type,
                 'productname': i.productname,
                 'productid': i.productid,
                 'quantity': i.quantity,
-                'color': i.color,
                 'size': i.size,
                 'image': i.image,
                 'category': i.category,
@@ -671,6 +667,7 @@ class generate_order_number(GenericAPIView):
         # serializer = Final_pyment_Serializer(queryset)
         return Response({'order_number': order_number})
 
+
 class card_payment_api(GenericAPIView):
     serializer_class = CardpaymentSerializer
 
@@ -690,3 +687,32 @@ class card_payment_api(GenericAPIView):
             serializer.save()
             return Response({'data': serializer.data, 'message': 'Payment successfull', 'success': 1}, status=status.HTTP_200_OK)
         return Response({'data': serializer.errors, 'message': 'failed', 'success': 0}, status=status.HTTP_400_BAD_REQUEST)
+
+# ORDER VIEW
+
+class view_all_orders_api(GenericAPIView):
+    serializer_class = Final_pyment_Serializer
+    
+    def get(self, request, id):
+
+        order = Final_pyment.objects.filter(userid=id)
+        if order.exists():
+            all_order_data = []
+            for order_details in order:
+                serializer = Final_pyment_Serializer(order_details)
+                serialized_data = serializer.data
+
+                productid = serialized_data['productid']
+                product_details = Product.objects.filter(id=productid).values(
+                     'price','color').first()
+
+                if product_details:
+                    combined_data = {**serialized_data, **product_details}
+                    all_order_data.append(combined_data)
+
+            if all_order_data:
+                return Response({'data': all_order_data, 'message': 'Data retrieved successfully', 'success': True}, status=status.HTTP_200_OK)
+            else:
+                return Response({'data': 'No data available'}, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            return Response({'data': 'No data available'}, status=status.HTTP_400_BAD_REQUEST)

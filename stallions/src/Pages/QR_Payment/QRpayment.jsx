@@ -22,17 +22,18 @@ export default function QRpayment() {
 
     const payment = (event) => {
         event.preventDefault()
-        const data = {
+        const store = {
             userid: localStorage.getItem('login_id'),
             grandtotal: sessionStorage.getItem('amount'),
             pyment_status: 1,
-            name: sessionStorage.getItem('holdername')
+            name: sessionStorage.getItem('holdername'),
+            pyment_type: 'Prepaid'
         }
-        console.log(data);
+        // console.log(store);
 
-        axios.post('http://127.0.0.1:8000/api/final_pyment_api', data).then((response) => {
-            console.log(response.data.data);
-            navigate(`/paymentsuccessful/${response.data.data.id}`)
+        axios.post('http://127.0.0.1:8000/api/final_pyment_api', store).then((response) => {
+            console.log(response.data.data[0].id)
+            navigate(`/paymentsuccessful/${response.data.data[0].id}`)
             window.location.reload()
         }).catch((error) => {
             console.log(error);

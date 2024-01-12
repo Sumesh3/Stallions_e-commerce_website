@@ -18,9 +18,6 @@ export default function Shop() {
     const [filter, setFilter] = useState({})
     const [all, setall] = useState(true)
 
-    // const [viewFilter, setviewFilter] = useState({})
-
-    // const [ViewProduct, setViewProduct] = useState([])
     const { ViewProduct, filterView } = useSelector(state => state.product)
     console.log(ViewProduct);
 
@@ -76,7 +73,6 @@ export default function Shop() {
         const searchQuery = { [name]: value }
         axios.post("http://127.0.0.1:8000/api/search_product_api", searchQuery).then((response) => {
             getsearchDatas(response.data.data)
-            // console.log(response.data.data)
         }).catch((error) => {
             console.log(error);
         })
@@ -109,6 +105,18 @@ export default function Shop() {
         })
         console.log(data);
         Dispatch(filterProduct(data))
+    }
+
+    console.log(ViewProduct);
+
+    const sorting = () => {
+        const sortedViewProduct = ViewProduct.slice().sort((a, b) => {
+            const dateA = new Date(a.price);
+            const dateB = new Date(b.price);
+
+            return dateA - dateB;
+        });
+        console.log(sortedViewProduct);
     }
 
 
@@ -183,7 +191,7 @@ export default function Shop() {
                                             </div>
                                         </div>
 
-                                        <div class="card">
+                                        {/* <div class="card">
                                             <div class="card-heading">
                                                 <a data-toggle="collapse" data-target="#collapseTwo">Filter Price</a>
                                             </div>
@@ -200,7 +208,7 @@ export default function Shop() {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
 
                                         <div class="card">
                                             <div class="card-heading">
@@ -210,31 +218,31 @@ export default function Shop() {
                                                 <div class="card-body ">
                                                     <div class="shop__sidebar__colour">
                                                         <label class="c-1" for="sp-1" style={{ borderWidth: filter.color == 'FF0000' ? '3px' : '' }} onClick={() => { filterColor("FF0000") }}>
-                                                            <input name='color' value={'FF0000'} type="radio" id="sp-1" onChange={addFilter} onClick={() => { filterSizer("FF0000"); setall(false) }}/>
+                                                            <input name='color' value={'FF0000'} type="radio" id="sp-1" onChange={addFilter} onClick={() => { filterSizer("FF0000"); setall(false) }} />
                                                         </label>
                                                         <label class="c-2" for="sp-2" style={{ borderWidth: filter.color == 'FFA500' ? '3px' : '' }} onClick={() => { filterColor("FFA500") }}>
-                                                            <input name='color' value={'FFA500'} type="radio" id="sp-2" onChange={addFilter} onClick={() => { filterSizer("FFA500"); setall(false) }}/>
+                                                            <input name='color' value={'FFA500'} type="radio" id="sp-2" onChange={addFilter} onClick={() => { filterSizer("FFA500"); setall(false) }} />
                                                         </label>
                                                         <label class="c-3" for="sp-3" style={{ borderWidth: filter.color == 'FFFF00' ? '3px' : '' }} onClick={() => { filterColor("FFFF00") }}>
-                                                            <input name='color' value={'FFFF00'} type="radio" id="sp-3" onChange={addFilter} onClick={() => { filterSizer("FFFF00"); setall(false) }}/>
+                                                            <input name='color' value={'FFFF00'} type="radio" id="sp-3" onChange={addFilter} onClick={() => { filterSizer("FFFF00"); setall(false) }} />
                                                         </label>
                                                         <label class="c-4" for="sp-4" style={{ borderWidth: filter.color == '00FF00' ? '3px' : '' }} onClick={() => { filterColor("00FF00") }}>
-                                                            <input name='color' value={'00FF00'} type="radio" id="sp-4" onChange={addFilter} onClick={() => { filterSizer("00FF00"); setall(false) }}/>
+                                                            <input name='color' value={'00FF00'} type="radio" id="sp-4" onChange={addFilter} onClick={() => { filterSizer("00FF00"); setall(false) }} />
                                                         </label>
                                                         <label class="c-5" for="sp-5" style={{ borderWidth: filter.color == '0000FF' ? '3px' : '' }} onClick={() => { filterColor("0000FF") }}>
-                                                            <input name='color' value={'0000FF'} type="radio" id="sp-5" onChange={addFilter} onClick={() => { filterSizer("0000FF"); setall(false) }}/>
+                                                            <input name='color' value={'0000FF'} type="radio" id="sp-5" onChange={addFilter} onClick={() => { filterSizer("0000FF"); setall(false) }} />
                                                         </label>
                                                         <label class="c-6" for="sp-6" style={{ borderWidth: filter.color == '4B0082' ? '3px' : '' }} onClick={() => { filterColor("4B0082") }}>
-                                                            <input name='color' value={'4B0082'} type="radio" id="sp-6" onChange={addFilter} onClick={() => { filterSizer("4B0082"); setall(false) }}/>
+                                                            <input name='color' value={'4B0082'} type="radio" id="sp-6" onChange={addFilter} onClick={() => { filterSizer("4B0082"); setall(false) }} />
                                                         </label>
                                                         <label class="c-7" for="sp-7" style={{ borderWidth: filter.color == 'EE82EE' ? '3px' : '' }} onClick={() => { filterColor("EE82EE") }}>
-                                                            <input name='color' value={'EE82EE'} type="radio" id="sp-7" onChange={addFilter} onClick={() => { filterSizer("EE82EE"); setall(false) }}/>
+                                                            <input name='color' value={'EE82EE'} type="radio" id="sp-7" onChange={addFilter} onClick={() => { filterSizer("EE82EE"); setall(false) }} />
                                                         </label>
                                                         <label class="c-8" for="sp-8" style={{ borderWidth: filter.color == '000000' ? '3px' : '' }} onClick={() => { filterColor("000000") }}>
-                                                            <input name='color' value={'000000'} type="radio" id="sp-8" onChange={addFilter} onClick={() => { filterColor("000000"); setall(false) }}/>
+                                                            <input name='color' value={'000000'} type="radio" id="sp-8" onChange={addFilter} onClick={() => { filterColor("000000"); setall(false) }} />
                                                         </label>
                                                         <label class="c-9" for="sp-9" style={{ borderWidth: filter.color == 'ffffff' ? '3px' : '' }} onClick={() => { filterColor("ffffff") }}>
-                                                            <input name='color' value={'ffffff'} type="radio" id="sp-9" onChange={addFilter} onClick={() => { filterColor("ffffff"); setall(false) }}/>
+                                                            <input name='color' value={'ffffff'} type="radio" id="sp-9" onChange={addFilter} onClick={() => { filterColor("ffffff"); setall(false) }} />
                                                         </label>
                                                     </div>
                                                 </div>
@@ -249,28 +257,28 @@ export default function Shop() {
                                                 <div class="card-body">
                                                     <div class="shop__size">
                                                         <label for="xs" style={{ borderWidth: filter.size == 'xs' ? '2px' : '' }} onClick={() => { filterSizer("xs") }}>xs
-                                                            <input name='size' value={'xs'} type="radio" id="xs" onChange={addFilter} onClick={() => { filterSizer("xs"); setall(false) }}/>
+                                                            <input name='size' value={'xs'} type="radio" id="xs" onChange={addFilter} onClick={() => { filterSizer("xs"); setall(false) }} />
                                                         </label>
                                                         <label for="sm" style={{ borderWidth: filter.size == 's' ? '2px' : '' }} onClick={() => { filterSizer("s") }}>s
-                                                            <input name='size' value={'s'} type="radio" id="sm" onChange={addFilter} onClick={() => { filterSizer("s"); setall(false) }}/>
+                                                            <input name='size' value={'s'} type="radio" id="sm" onChange={addFilter} onClick={() => { filterSizer("s"); setall(false) }} />
                                                         </label>
                                                         <label for="md" style={{ borderWidth: filter.size == 'm' ? '2px' : '' }} onClick={() => { filterSizer("m") }}>m
-                                                            <input name='size' value={'m'} type="radio" id="md" onChange={addFilter} onClick={() => { filterSizer("m"); setall(false) }}/>
+                                                            <input name='size' value={'m'} type="radio" id="md" onChange={addFilter} onClick={() => { filterSizer("m"); setall(false) }} />
                                                         </label>
                                                         <label for="xl" style={{ borderWidth: filter.size == 'xl' ? '2px' : '' }} onClick={() => { filterSizer("xl") }}>xl
-                                                            <input name='size' value={'xl'} type="radio" id="xl" onChange={addFilter} onClick={() => { filterSizer("xl"); setall(false) }}/>
+                                                            <input name='size' value={'xl'} type="radio" id="xl" onChange={addFilter} onClick={() => { filterSizer("xl"); setall(false) }} />
                                                         </label>
                                                         <label for="2xl" style={{ borderWidth: filter.size == '2xl' ? '2px' : '' }} onClick={() => { filterSizer("2xl") }}>2xl
-                                                            <input name='size' value={'2xl'} type="radio" id="2xl" onChange={addFilter} onClick={() => { filterSizer("2xl"); setall(false) }}/>
+                                                            <input name='size' value={'2xl'} type="radio" id="2xl" onChange={addFilter} onClick={() => { filterSizer("2xl"); setall(false) }} />
                                                         </label>
                                                         <label for="xxl" style={{ borderWidth: filter.size == 'xxl' ? '2px' : '' }} onClick={() => { filterSizer("xxl") }}>xxl
-                                                            <input name='size' value={'xxl'} type="radio" id="xxl" onChange={addFilter} onClick={() => { filterSizer("xxl"); setall(false) }}/>
+                                                            <input name='size' value={'xxl'} type="radio" id="xxl" onChange={addFilter} onClick={() => { filterSizer("xxl"); setall(false) }} />
                                                         </label>
                                                         <label for="3xl" style={{ borderWidth: filter.size == '3xl' ? '2px' : '' }} onClick={() => { filterSizer("3xl") }}>3xl
-                                                            <input name='size' value={'3xl'} type="radio" id="3xl" onChange={addFilter} onClick={() => { filterSizer("3xl"); setall(false) }}/>
+                                                            <input name='size' value={'3xl'} type="radio" id="3xl" onChange={addFilter} onClick={() => { filterSizer("3xl"); setall(false) }} />
                                                         </label>
                                                         <label for="4xl" style={{ borderWidth: filter.size == '4xl' ? '2px' : '' }} onClick={() => { filterSizer("4xl") }}>4xl
-                                                            <input name='size' value={'4xl'} type="radio" id="4xl" onChange={addFilter} onClick={() => { filterSizer("4xl"); setall(false) }}/>
+                                                            <input name='size' value={'4xl'} type="radio" id="4xl" onChange={addFilter} onClick={() => { filterSizer("4xl"); setall(false) }} />
                                                         </label>
                                                     </div>
                                                 </div>
@@ -287,17 +295,18 @@ export default function Shop() {
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <div class="shop__product__option__left">
-                                            <p>Showing 1–12 of 126 results</p>
+                                            <p>Total {ViewProduct.length} Products</p>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <div class="shop__product__option__right">
                                             <p>Sort by Price : </p>
-                                            <select className='sop_side_new'>
-                                                <option value="">Low To High</option>
+                                             <button className='sop_side_new' value="low_high" onClick={sorting}> Low To High</button>
+                                            {/* <select className='sop_side_new'>
+                                                <option value="low_high">Low To High</option>
                                                 <option value="">0 - 999</option>
                                                 <option value="">1000 - 2000+</option>
-                                            </select>
+                                            </select> */}
                                         </div>
                                     </div>
                                 </div>
@@ -355,7 +364,7 @@ export default function Shop() {
                         </div>
 
 
-                        <div class="row">
+                        {/* <div class="row">
                             <div class="col-lg-12">
                                 <div class="product__pagination">
                                     <a class="active" href="#">1</a>
@@ -365,12 +374,12 @@ export default function Shop() {
                                     <a href="#">21</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
 
                     </div>
                 </div>
-            </section>
+            </section><br /><br /><br /><br />
         </>
     )
 }

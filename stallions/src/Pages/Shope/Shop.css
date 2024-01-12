@@ -1,6 +1,6 @@
-.shop_nav{
-position: relative;
-top: 26px;
+.shop_nav {
+    position: relative;
+    top: 26px;
 }
 
 .breadcrumb-option {
@@ -293,10 +293,10 @@ top: 26px;
 .shop__product__option__right .nice-select {
     float: none;
     display: inline-block;
-   
+
 }
 
-.sop_side_new{
+.sop_side_new {
     background-color: transparent;
     padding: 0;
     height: auto;
@@ -304,11 +304,15 @@ top: 26px;
     padding-right: 28px;
     transition: transform 0.3s;
     background-color: transparent;
+    margin-left: 5px;
+    font-weight: 500;
 }
 
 .sop_side_new:hover {
     cursor: pointer;
+    color: #a10808;
 }
+
 .product-card {
     border: 1px solid #dee2e6;
     border-radius: 10px;
@@ -323,7 +327,7 @@ top: 26px;
     /* max-width: 250px; */
     max-width: 250px;
     height: 175px;
-    
+
     object-fit: cover;
 }
 
@@ -331,7 +335,7 @@ top: 26px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 1.2rem;
     font-weight: bold;
-   
+
 }
 
 .product-price {
@@ -398,16 +402,16 @@ top: 26px;
     padding-right: 15px;
 }
 
-.btn-remove-to-wishlist{
+.btn-remove-to-wishlist {
     background-color: transparent;
     border: none;
     color: red;
 }
 
-.nice-scroll li{
+.nice-scroll li {
     cursor: pointer;
 }
 
-.card-heading a{
+.card-heading a {
     cursor: default;
 }

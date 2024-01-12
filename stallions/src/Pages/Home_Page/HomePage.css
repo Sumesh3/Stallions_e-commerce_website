@@ -3,6 +3,10 @@ body {
 	margin: 0;
 }
 
+a {
+	text-decoration: none;
+}
+
 /* .spad{
     background-color: #deded369;
     position: relative;
@@ -556,11 +560,12 @@ body {
 		position: relative;
 		top: 110px;
 		left: -70px;
-		min-width: 150px;
+		min-width: 170px;
 		font-weight: 600;
 		font-size: 30px;
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	}
+	
 
 	.hom_cont_12 {
 		position: relative;

@@ -31,7 +31,6 @@ export default function Wishlist() {
                 return details.id != deleteid
             })
             setviewWishlist(deleted)
-
         })
     }
 

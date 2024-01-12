@@ -10,7 +10,9 @@ export default function Navbar() {
   const navigate = useNavigate()
   const clears = ()=>{
     localStorage.clear()
+    sessionStorage.clear()
     navigate('/')
+    window.location.reload()
   }
 
 

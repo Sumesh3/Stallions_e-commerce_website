@@ -88,9 +88,9 @@
 }
 
 .login-forgot {
-    position: relative;
-    left: 7.1cm;
-    top: -5px;
+    position: absolute;
+    right: 60px;
+    top: 240px;
     font-size: 14px;
     font-family: cursive;
     color: rgba(66, 29, 47, 0.822);

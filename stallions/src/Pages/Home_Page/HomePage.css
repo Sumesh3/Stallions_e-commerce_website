@@ -174,7 +174,7 @@ a {
 
 .product__item__pic .product__hover {
 	position: absolute;
-	right: 0px;
+	right: -20px;
 	/* top: 20px; */
 	-webkit-transition: all, 0.8s;
 	-o-transition: all, 0.8s;
@@ -323,6 +323,7 @@ a {
 }
 
 .home_pic_sa1 {
+	position: relative;
 	justify-content: start;
 	display: flex;
 }
@@ -565,7 +566,7 @@ a {
 		font-size: 30px;
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	}
-	
+
 
 	.hom_cont_12 {
 		position: relative;
@@ -743,8 +744,8 @@ a {
 @media screen and (max-width: 610px) {
 
 	.home_pic_cont {
-		width: 250px;
-		height: 250px;
+		max-width: 250px;
+		max-height: 250px;
 	}
 
 	.hom_cont_11 {
@@ -844,4 +845,105 @@ a {
 		left: 100px;
 	}
 
+}
+
+@media screen and (max-width: 580px) {
+	.main_home_picn {
+		overflow: hidden;
+	}
+}
+
+@media screen and (max-width: 473px) {
+	.main_home_picn {
+		overflow: hidden;
+	}
+
+	.img_hom {
+		height: 300px;
+		overflow: hidden;
+		box-sizing: border-box;
+	}
+	.hom_sub {
+		display: flex;
+	}
+
+	.home_button_p {
+		position: relative;
+		left: 0px;
+		top: -17px;
+	}
+
+	.juy {
+		position: absolute;
+		left: 40%;
+		top: 110px;
+		color: white;
+		border: 1px solid #0d0d0d;
+		background-color: #0d0d0d80;
+
+	}
+
+	.julo {
+		position: absolute;
+		left: 40%;
+		top: 670px;
+		color: rgb(255, 255, 255);
+		border: 1px solid #0d0d0d;
+		background-color: #0d0d0d80;
+	}
+
+	.ytr {
+		position: absolute;
+		left: 40%;
+		top: 390px;
+		text-align: start;
+		color: rgb(255, 255, 255);
+		border: 1px solid #0d0d0d;
+		background-color: #0d0d0d80;
+	}
+
+	.iuy {
+		position: absolute;
+		left: 40%;
+		top: 950px;
+		text-align: start;
+		color: rgb(255, 255, 255);
+		border: 1px solid #0d0d0d;
+		background-color: #0d0d0d80;
+	}
+
+	.product__item {
+		position: relative;
+		left: 15px;
+	}
+
+	.product__item__text {
+		margin-left: -80px;
+	}
+
+	.head_hom1 {
+		position: relative;
+		left: -48px;
+		top: -6px;
+		
+	}
+
+	.head_hom2 {
+		font-size: 13px;
+		position: relative;
+		left: -45px;
+		top: -6px;
+	}
+
+	.head_hom3 {
+		width: 150px;
+		position: relative;
+		left: -40px;
+		top: -6px;
+	}
+
+	.hom_shop_btn2 {
+		position: relative;
+		left: 270px;
+	}
 }

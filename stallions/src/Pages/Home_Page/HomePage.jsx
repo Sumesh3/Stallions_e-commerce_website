@@ -37,14 +37,13 @@ export default function HomePage() {
             </div>
 
 
-            <div className=''>
 
                 <div className="main_home_picn">
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-md-12 col-sm-12">
+                    <div className="col-lg-12 col-md-12 col-sm-12 col-md-12 col-sm-6">
                         <div className="picture_home_m">
                             <div className='home_pic_sa1'>
                                 <img className='home_pic_cont' src="Assets\Images\banner-1.jpg" alt="" />
-                                <div className='hom_cont_11'>Clothing Collections</div>
+                                <div className='hom_cont_11 juy'>Clothing Collections</div>
                                 {
                                     user ?
                                         <a href="/shop" className='hom_shop_btn1'>Shop Now</a>
@@ -53,7 +52,7 @@ export default function HomePage() {
                                 }
                             </div>
                             <div className='home_pic_sa2'>
-                                <div className='hom_cont_12'>Winter Collections</div>
+                                <div className='hom_cont_12 ytr'>Winter Collections</div>
                                 {
                                     user ?
                                         <a href="/shop" className='hom_shop_btn2'>Shop Now</a>
@@ -65,7 +64,7 @@ export default function HomePage() {
                             </div>
                             <div className='home_pic_sa3'>
                                 <img className='home_pic_cont' src="Assets\Images\banner-3.jpg" alt="" />
-                                <div className='hom_cont_11'>New Arrival T-Shirt</div>
+                                <div className='hom_cont_11 julo'>New Arrival T-Shirt</div>
                                 {
                                     user ?
                                         <a href="/shop" className='hom_shop_btn1'>Shop Now</a>
@@ -74,7 +73,7 @@ export default function HomePage() {
                                 }
                             </div>
                             <div className='home_pic_sa4'>
-                                <div className='hom_cont_12'>Modern Churidar</div>
+                                <div className='hom_cont_12 iuy'>Modern Churidar</div>
                                 {
                                     user ?
                                         <a href="/shop" className='hom_shop_btn2'>Shop Now</a>
@@ -90,7 +89,6 @@ export default function HomePage() {
 
 
 
-            </div>
 
 
             <section className="product ">
@@ -98,7 +96,7 @@ export default function HomePage() {
                     <div className="row seller12">
                         <div className="col-lg-12">
                             <ul className="filter__controls">
-                                <li>Best Sellers</li>
+                                {/* <li>Best Sellers</li> */}
                                 <li>New Arrivals</li>
                                 <li>Hot Sales</li>
                             </ul>

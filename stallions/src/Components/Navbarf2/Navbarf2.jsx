@@ -71,7 +71,7 @@ export default function Navbarf2() {
                   <a href="/wishlist" className='fav_pp'><li className='header_li fav'><FavoriteIcon /></li></a>
                   <a href="/cart">
                     <li className='header_li cart'>
-                      <IconButton aria-label="cart">
+                      <IconButton aria-label="cart" className='cart'>
                         <StyledBadge badgeContent={viewCart.length} color="secondary">
                           <ShoppingCartIcon />
                         </StyledBadge>
@@ -106,6 +106,7 @@ export default function Navbarf2() {
                   <li className='header_li'><a className='header_a' href='/addproduct'>Add Product</a></li>
                   <li className='header_li'><a className='header_a' href='/adminviewproduct'>View Product</a></li>
                   <li className='header_li '><a className='header_a' href='/userdetails'>User Details</a></li>
+                  <li className='header_li '><a className='header_a' href='/viewbookedproduct'>Orders</a></li>
                 </ul>
                 <ul className='header_ul ul_sec '>
                   <div className='header_second'>

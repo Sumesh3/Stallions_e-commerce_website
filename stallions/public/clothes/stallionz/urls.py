@@ -50,4 +50,5 @@ urlpatterns = [
     path("card_payment_api", views.card_payment_api.as_view(), name="card_payment_api"),
 
     path("view_all_orders_api/<int:id>", views.view_all_orders_api.as_view(), name="view_all_orders_api"),
+    path("admin_view_orders_api", views.admin_view_orders_api.as_view(), name="admin_view_orders_api"),
 ]

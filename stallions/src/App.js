@@ -29,6 +29,7 @@ import Edit_Product from './Pages/Admin/View_Product_admin/Edit_Product';
 import Footer from './Pages/Footer/Footer';
 import HomePage from './Pages/Home_Page/HomePage';
 import OrderedProducts from './Pages/Ordered_Products/OrderedProducts';
+import ViewBookedProducts from './Pages/Admin/View_Booked_Products/ViewBookedProducts';
 
 function App() {
   return (
@@ -64,6 +65,7 @@ function App() {
           <Route path='/footer' element={<Footer />} />
           <Route path='/home' element={<HomePage />} />
           <Route path='/orderedproducts' element={<OrderedProducts />} />
+          <Route path='/viewbookedproduct' element={<ViewBookedProducts />} />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

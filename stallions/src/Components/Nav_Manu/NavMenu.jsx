@@ -53,6 +53,7 @@ export default function NavMenu() {
                             <a href="/addproduct"><AddIcon />   Add Product</a>
                             <a href="/adminviewproduct"><PreviewIcon />   View Product</a>
                             <a href="/userdetails"><PreviewIcon />   User Details</a>
+                            <a href="/viewbookedproduct"><LocalShippingIcon />Orders</a>
                             {/* <a href="/changepassword"><ManageAccountsIcon />   Change Password</a> */}
                             {user ? <a onClick={clears}> <LogoutIcon />  LOG OUT</a> : <a href="/registration"><Person />     Register</a>}
                         </div>

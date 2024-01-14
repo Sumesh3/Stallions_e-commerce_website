@@ -9,7 +9,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProduct, filterProduct } from '../Redux/Slice/ProductViewSlice';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Shop() {
 
@@ -117,6 +117,11 @@ export default function Shop() {
             return dateA - dateB;
         });
         console.log(sortedViewProduct);
+    }
+
+    const navigate = useNavigate()
+    const view =(id)=>{
+        navigate(`/single_view/${id}`)
     }
 
 
@@ -321,9 +326,9 @@ export default function Shop() {
                                             {
                                                 all ?
                                                     ViewProduct.map((data, key) => (
-                                                        <div className="col-md-3 mb-4">
+                                                        <div className="col-md-3 mb-4" >
                                                             <div className="card product-card">
-                                                                <img src={`/clothes/${data.image}`} className="card-img-top" alt="" />
+                                                                <img src={`/clothes/${data.image}`} style={{cursor:'pointer'}} className="card-img-top" alt="" onClick={() => { view(data.id) }}/>
                                                                 <div className="card-body">
                                                                     <h5 className="card-title product-title">{data.productname}</h5>
                                                                     <p className="card-text product-price">{data.price}</p>
@@ -341,7 +346,7 @@ export default function Shop() {
                                                         filterView.map((data, key) => (
                                                             <div className="col-md-3 mb-4">
                                                                 <div className="card product-card">
-                                                                    <img src={`/clothes/${data.image}`} className="card-img-top" alt="" />
+                                                                    <img src={`/clothes/${data.image}`} style={{cursor:'pointer'}} className="card-img-top" alt="" onClick={() => { view(data.id) }} />
                                                                     <div className="card-body">
                                                                         <h5 className="card-title product-title">{data.productname}</h5>
                                                                         <p className="card-text product-price">{data.price}</p>

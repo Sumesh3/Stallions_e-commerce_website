@@ -164,11 +164,6 @@ export default function AddProduct() {
                                         </div>
 
 
-
-
-
-
-
                                     </div>
                                     <div className="form-group">
                                         <label className='form-name'>Size</label>

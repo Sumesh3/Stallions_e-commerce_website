@@ -34,7 +34,7 @@ export default function Single_view() {
                     <div className='single__pr_details'>
                         <p>Category : {ViewSinglePr.category}</p>
                         <p>Mandate : {ViewSinglePr.mandate}</p>
-                        <p>Color : <span style={{height:"10px", width:"10px", backgroundColor:`#${ViewSinglePr.color}`, color:`#${ViewSinglePr.color}`}}>_____</span></p>
+                        <p>Color : <span style={{height:"10px", width:"10px", borderRadius:"100%", backgroundColor:`#${ViewSinglePr.color}`, color:`#${ViewSinglePr.color}`}}>-----</span></p>
                         <p>Size : {ViewSinglePr.size}</p>
                         <p>Gender : {ViewSinglePr.gender}</p>
                         <p>Occasion : {ViewSinglePr.occasion}</p>

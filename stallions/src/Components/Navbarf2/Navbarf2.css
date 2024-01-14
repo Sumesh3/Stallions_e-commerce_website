@@ -84,7 +84,8 @@
 
 .cart {
   position: relative;
-  top: -3px;
+  top: -1px;
+  color: black;
 }
 
 .cart:hover {

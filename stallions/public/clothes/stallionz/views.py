@@ -716,3 +716,33 @@ class view_all_orders_api(GenericAPIView):
                 return Response({'data': 'No data available'}, status=status.HTTP_400_BAD_REQUEST)
         else:
             return Response({'data': 'No data available'}, status=status.HTTP_400_BAD_REQUEST)
+        
+
+class admin_view_orders_api(GenericAPIView):
+    serializer_class = Final_pyment_Serializer
+
+    def get(self, request):
+        order = Final_pyment.objects.all()
+        if order.exists():
+            all_order_data = []
+            for order_details in order:
+                serializer = Final_pyment_Serializer(order_details)
+                serialized_data = serializer.data
+
+                productid = serialized_data['productid']
+                userid = serialized_data['userid']
+                product_details = Product.objects.filter(id=productid).values(
+                     'price','color').first()
+                user_email = Login.objects.filter(id=userid).values(
+                     'email').first()
+
+                if product_details:
+                    combined_data = {**serialized_data, **product_details, **user_email}
+                    all_order_data.append(combined_data)
+
+            if all_order_data:
+                return Response({'data': all_order_data, 'message': 'Data retrieved successfully', 'success': True}, status=status.HTTP_200_OK)
+            else:
+                return Response({'data': 'No data available'}, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            return Response({'data': 'No data available'}, status=status.HTTP_400_BAD_REQUEST)

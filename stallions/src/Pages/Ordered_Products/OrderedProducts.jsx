@@ -55,6 +55,7 @@ export default function OrderedProducts() {
                       </div>
                       <div class="row d-flex">
                         <p style={{ textTransform: 'uppercase' }}>Size : {data.size}</p>
+                        <p style={{ textTransform:'capitalize' }}>Colour : <span style={{height:"10px", width:"10px", borderRadius:"50%", backgroundColor:`#${data.color}`, color:`#${data.color}`}}>-----</span></p>
                         <p >Payment : {data.pyment_type}</p>
                         <p class="text-muted">Delivery on :</p>
                       </div>
